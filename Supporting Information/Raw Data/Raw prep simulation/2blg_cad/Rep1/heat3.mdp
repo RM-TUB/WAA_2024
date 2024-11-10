@@ -1,0 +1,38 @@
+define                  = -DPOSRES 
+integrator              = md
+dt                      = 0.002     ; 2 fs
+nsteps                  = 50000     ; 2 * 50000 = 100 ps
+nstxtcout               = 500
+nstvout                 = 0
+nstfout                 = 0
+nstcalcenergy           = 100
+nstenergy               = 1000
+nstlog                  = 1000
+continuation            = no          ; first dynamics run
+;
+cutoff-scheme           = Verlet
+nstlist                 = 20
+rlist                   = 1.2
+vdwtype                 = Cut-off
+vdw-modifier            = None
+rvdw                    = 1.2
+coulombtype             = pme
+rcoulomb                = 1.2
+pbc                     = xyz       ; 3-D PBC
+;
+tcoupl                  = berendsen
+tc_grps                 = Protein_MOL Water_and_ions
+tau_t                   = 0.1 0.1
+ref_t                   = 150 150
+nsttcouple              = 2 
+;
+constraints             = h-bonds
+constraint_algorithm    = LINCS
+;
+nstcomm                 = 100
+comm_mode               = linear
+comm_grps               = Protein_MOL Water_and_ions
+;
+gen-vel                 = yes
+gen-temp                = 150
+gen-seed                = -1

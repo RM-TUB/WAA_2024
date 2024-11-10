@@ -1,0 +1,5603 @@
+log started: Wed Jul 10 17:33:02 2024
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff14SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> parm10 = loadamberparams parm10.dat
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+>> frcmod14SB = loadamberparams frcmod.ff14SB
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+>> #
+>> #	Load main chain and terminating amino acid libraries
+>> #
+>> loadOff amino12.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/amino12.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "HYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+> 
+>     source /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.water.tip3p
+----- Source: /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.water.tip3p
+----- Source of /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.water.tip3p done
+>> #
+>> #       Load water and ions for TIP3P + Li/Merz monovalent ions 
+>> #       + Joung-Chetham monovalent ions
+>> #       + Li/Merz highly charged ions (+2 to +4, 12-6 normal usage set)
+>> #
+>> #       Note: the Li/Merz monovalent set is loaded only to get Tl+,
+>> #          Cu+, Ag+ NH4+, H3O+.  Since we load Joung-Cheatham second,
+>> #          the alkali halide parameters come from the Joung-Cheatham set
+>> #
+>> addAtomTypes {
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>>     { "Tl+"  "Tl"  "sp3" }
+>>     { "Cu+"  "Cu"  "sp3" }
+>>     { "Ag+"  "Ag"  "sp3" }
+>>     { "NH4+"  "N"  "sp3" }
+>>     { "H3O+"  "O"  "sp3" }
+>>     { "Be2+" "Be"  "sp3" }
+>>     { "Cu2+" "Cu"  "sp3" }
+>>     { "Ni2+" "Ni"  "sp3" }
+>>     { "Pt2+" "Pt"  "sp3" }
+>>     { "Zn2+" "Zn"  "sp3" }
+>>     { "Co2+" "Co"  "sp3" }
+>>     { "Pd2+" "Pd"  "sp3" }
+>>     { "Ag2+" "Ag"  "sp3" }
+>>     { "Cr2+" "Cr"  "sp3" }
+>>     { "Fe2+" "Fe"  "sp3" }
+>>     { "Mg2+" "Mg"  "sp3" }
+>>     { "V2+"  "V"   "sp3" }
+>>     { "Mn2+" "Mn"  "sp3" }
+>>     { "Hg2+" "Hg"  "sp3" }
+>>     { "Cd2+" "Cd"  "sp3" }
+>>     { "Yb2+" "Yb"  "sp3" }
+>>     { "Ca2+" "Ca"  "sp3" }
+>>     { "Sn2+" "Sn"  "sp3" }
+>>     { "Pb2+" "Pb"  "sp3" }
+>>     { "Eu2+" "Eu"  "sp3" }
+>>     { "Sr2+" "Sr"  "sp3" }
+>>     { "Sm2+" "Sm"  "sp3" }
+>>     { "Ba2+" "Ba"  "sp3" }
+>>     { "Ra2+" "Ra"  "sp3" }
+>>     { "Al3+" "Al"  "sp3" }
+>>     { "Fe3+" "Fe"  "sp3" }
+>>     { "Cr3+" "Cr"  "sp3" }
+>>     { "In3+" "In"  "sp3" }
+>>     { "Tl3+" "Tl"  "sp3" }
+>>     { "Y3+"  "Y"   "sp3" }
+>>     { "La3+" "La"  "sp3" }
+>>     { "Ce3+" "Ce"  "sp3" }
+>>     { "Pr3+" "Pr"  "sp3" }
+>>     { "Nd3+" "Nd"  "sp3" }
+>>     { "Sm3+" "Sm"  "sp3" }
+>>     { "Eu3+" "Eu"  "sp3" }
+>>     { "Gd3+" "Gd"  "sp3" }
+>>     { "Tb3+" "Tb"  "sp3" }
+>>     { "Dy3+" "Dy"  "sp3" }
+>>     { "Er3+" "Er"  "sp3" }
+>>     { "Tm3+" "Tm"  "sp3" }
+>>     { "Lu3+" "Lu"  "sp3" }
+>>     { "Hf4+" "Hf"  "sp3" }
+>>     { "Zr4+" "Zr"  "sp3" }
+>>     { "Ce4+" "Ce"  "sp3" }
+>>     { "U4+"  "U"   "sp3" }
+>>     { "Pu4+" "Pu"  "sp3" }
+>>     { "Th4+" "Th"  "sp3" }
+>> }
+>> loadOff atomic_ions.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPC3POLBOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> loadAmberParams frcmod.tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+>> loadAmberParams frcmod.ions1lm_126_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+>> loadAmberParams frcmod.ionsjc_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>> loadAmberParams frcmod.ions234lm_126_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ions234lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP3P water model (12-6 normal usage set)
+>> 
+> 
+>     source /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.gaff
+----- Source: /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.gaff
+----- Source of /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.gaff done
+>> logFile leap.log
+log started: Wed Jul 10 17:33:03 2024
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the general Amber Force field.
+>> #       This file is mostly for use with Antechamber
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "h1"  "H" "sp3" }
+>> 	{ "h2"  "H" "sp3" }
+>> 	{ "h3"  "H" "sp3" }
+>> 	{ "h4"  "H" "sp3" }
+>> 	{ "h5"  "H" "sp3" }
+>> 	{ "ha"  "H" "sp3" }
+>> 	{ "hc"  "H" "sp3" }
+>> 	{ "hn"  "H" "sp3" }
+>> 	{ "ho"  "H" "sp3" }
+>> 	{ "hp"  "H" "sp3" }
+>> 	{ "hs"  "H" "sp3" }
+>> 	{ "hw"  "H" "sp3" }
+>> 	{ "hx"  "H" "sp3" }
+>> 	{ "o"  "O" "sp2" }
+>> 	{ "o2"  "O" "sp2" }
+>> 	{ "oh"  "O" "sp3" }
+>> 	{ "op"  "O" "sp3" }
+>> 	{ "oq"  "O" "sp3" }
+>> 	{ "os"  "O" "sp3" }
+>> 	{ "ow"  "O" "sp3" }
+>> 	{ "c"  "C" "sp2" }
+>> 	{ "c1"  "C" "sp2" }
+>> 	{ "c2"  "C" "sp2" }
+>> 	{ "c3"  "C" "sp3" }
+>> 	{ "ca"  "C" "sp2" }
+>> 	{ "cc"  "C" "sp2" }
+>> 	{ "cd"  "C" "sp2" }
+>> 	{ "ce"  "C" "sp2" }
+>> 	{ "cf"  "C" "sp2" }
+>> 	{ "cg"  "C" "sp2" }
+>> 	{ "ch"  "C" "sp2" }
+>> 	{ "cp"  "C" "sp2" }
+>> 	{ "cq"  "C" "sp2" }
+>> 	{ "cu"  "C" "sp2" }
+>> 	{ "cv"  "C" "sp2" }
+>> 	{ "cx"  "C" "sp2" }
+>> 	{ "cy"  "C" "sp2" }
+>> 	{ "cz"  "C" "sp2" }
+>> 	{ "n"   "N" "sp2" }
+>> 	{ "n1"  "N" "sp2" }
+>> 	{ "n2"  "N" "sp2" }
+>> 	{ "n3"  "N" "sp3" }
+>> 	{ "n4"  "N" "sp3" }
+>> 	{ "na"  "N" "sp2" }
+>> 	{ "nb"  "N" "sp2" }
+>> 	{ "nc"  "N" "sp2" }
+>> 	{ "nd"  "N" "sp2" }
+>> 	{ "ne"  "N" "sp2" }
+>> 	{ "nf"  "N" "sp2" }
+>> 	{ "nh"  "N" "sp2" }
+>> 	{ "ni"  "N" "sp2" }
+>> 	{ "nj"  "N" "sp2" }
+>> 	{ "nk"  "N" "sp3" }
+>> 	{ "nl"  "N" "sp3" }
+>> 	{ "nm"  "N" "sp2" }
+>> 	{ "nn"  "N" "sp2" }
+>> 	{ "no"  "N" "sp2" }
+>> 	{ "np"  "N" "sp3" }
+>> 	{ "nq"  "N" "sp3" }
+>> 	{ "s"   "S" "sp2" }
+>> 	{ "s2"   "S" "sp2" }
+>> 	{ "s3"   "S" "sp3" }
+>> 	{ "s4"   "S" "sp3" }
+>> 	{ "s6"   "S" "sp3" }
+>> 	{ "sh"   "S" "sp3" }
+>> 	{ "sp"   "S" "sp3" }
+>> 	{ "sq"   "S" "sp3" }
+>> 	{ "ss"   "S" "sp3" }
+>> 	{ "sx"   "S" "sp3" }
+>> 	{ "sy"   "S" "sp3" }
+>> 	{ "p2"   "P" "sp2" }
+>> 	{ "p3"   "P" "sp3" }
+>> 	{ "p4"   "P" "sp3" }
+>> 	{ "p5"   "P" "sp3" }
+>> 	{ "pb"   "P" "sp3" }
+>> 	{ "pc"   "P" "sp3" }
+>> 	{ "pd"   "P" "sp3" }
+>> 	{ "pe"   "P" "sp3" }
+>> 	{ "pf"   "P" "sp3" }
+>> 	{ "px"   "P" "sp3" }
+>> 	{ "py"   "P" "sp3" }
+>> 	{ "f"   "F" "sp3" }
+>> 	{ "cl"  "Cl" "sp3" }
+>> 	{ "br"  "Br" "sp3" }
+>> 	{ "i"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the general force field parameter set.
+>> #
+>> gaff = loadamberparams gaff.dat
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/gaff.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 1.81, May 2017)
+> 
+>     loadamberparams /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ionsjc_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>     loadamberparams EFZ.frcmod
+Loading parameters: ./EFZ.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+>     loadamberprep EFZ_sybyl_resp_gaff.prepc
+Loading Prep file: ./EFZ_sybyl_resp_gaff.prepc
+Loaded UNIT: MOL
+>     complex  = loadpdb /home/ron/work/NEW_SIMULATIONBOXES/test2/2blg/cab/2blg.pdb_box_size_8.999999999999998_8.999999999999998_8.999999999999998/2blg.pdb_8.999999999999998_8.999999999999998_8.999999999999998_cab_ph9_10_mol_with_TER.pdb # change: name of pdb file, protonate first
+Loading PDB file: /home/ron/work/NEW_SIMULATIONBOXES/test2/2blg/cab/2blg.pdb_box_size_8.999999999999998_8.999999999999998_8.999999999999998/2blg.pdb_8.999999999999998_8.999999999999998_8.999999999999998_cab_ph9_10_mol_with_TER.pdb
+Matching PDB residue names to LEaP variables.
+Mapped residue LEU, term: Terminal/beginning, seq. number: 0 to: NLEU.
+Mapped residue ILE, term: Terminal/last, seq. number: 161 to: CILE.
+  total atoms in file: 2965
+>     bond complex.106.SG complex.119.SG # change: number of residues that correspond to CYS
+>     bond complex.66.SG complex.160.SG # change: number of residues that correspond to CYS
+>     solvateBox complex TIP3PBOX 15
+  Solute vdw bounding box:              96.374 91.232 88.397
+  Total bounding box for atom centers:  126.374 121.232 118.397
+  Solvent unit box:                     18.774 18.774 18.774
+The number of boxes:  x= 7  y= 7  z= 7
+  Total vdw box size:                   129.762 124.383 121.353 angstroms.
+  Volume: 1958651.571 A^3 
+  Total mass 1036009.586 amu,  Density 0.878 g/cc
+  Added 56289 residues.
+>     charge complex
+Total unperturbed charge: -38.999990
+Total perturbed charge:   -38.999990
+>     addionsrand complex Na+ 1 Cl- 1 # change: ionic strength of the experiment & 0 net charge for the system
+Adding 2 counter ions to "complex". 56287 solvent molecules will remain.
+0: Placed Na+ in complex at (22.79, -12.83, 49.33).
+Placed Cl- in complex at (-60.92, 20.00, 29.39).
+>     charge complex
+Total unperturbed charge: -38.999990
+Total perturbed charge:   -38.999990
+>     saveamberparm complex ref.prmtop ref.inpcrd
+Checking Unit.
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Warning!
+The unperturbed charge of the unit (-38.999990) is not zero.
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+old PREP-specified impropers:
+ <MOL 163>:  C2   C18  C1   O1  
+ <MOL 163>:  C1   C17  C18  O8  
+ <MOL 163>:  C4   C18  C17  H10 
+ <MOL 163>:  C3   C1   C2   H1  
+ <MOL 163>:  C2   C4   C3   H2  
+ <MOL 163>:  C5   C3   C4   C17 
+ <MOL 163>:  C7   C14  C6   O2  
+ <MOL 163>:  C6   C8   C7   H4  
+ <MOL 163>:  C7   C9   C8   H5  
+ <MOL 163>:  C8   C13  C9   C10 
+ <MOL 163>:  C9   C11  C10  H6  
+ <MOL 163>:  C12  C10  C11  H7  
+ <MOL 163>:  C11  O4   C12  O3  
+ <MOL 163>:  C9   C14  C13  H8  
+ <MOL 163>:  C6   C13  C14  O5  
+ <MOL 163>:  C15  O6   C16  O7  
+ <MOL 164>:  C2   C18  C1   O1  
+ <MOL 164>:  C1   C17  C18  O8  
+ <MOL 164>:  C4   C18  C17  H10 
+ <MOL 164>:  C3   C1   C2   H1  
+ <MOL 164>:  C2   C4   C3   H2  
+ <MOL 164>:  C5   C3   C4   C17 
+ <MOL 164>:  C7   C14  C6   O2  
+ <MOL 164>:  C6   C8   C7   H4  
+ <MOL 164>:  C7   C9   C8   H5  
+ <MOL 164>:  C8   C13  C9   C10 
+ <MOL 164>:  C9   C11  C10  H6  
+ <MOL 164>:  C12  C10  C11  H7  
+ <MOL 164>:  C11  O4   C12  O3  
+ <MOL 164>:  C9   C14  C13  H8  
+ <MOL 164>:  C6   C13  C14  O5  
+ <MOL 164>:  C15  O6   C16  O7  
+ <MOL 165>:  C2   C18  C1   O1  
+ <MOL 165>:  C1   C17  C18  O8  
+ <MOL 165>:  C4   C18  C17  H10 
+ <MOL 165>:  C3   C1   C2   H1  
+ <MOL 165>:  C2   C4   C3   H2  
+ <MOL 165>:  C5   C3   C4   C17 
+ <MOL 165>:  C7   C14  C6   O2  
+ <MOL 165>:  C6   C8   C7   H4  
+ <MOL 165>:  C7   C9   C8   H5  
+ <MOL 165>:  C8   C13  C9   C10 
+ <MOL 165>:  C9   C11  C10  H6  
+ <MOL 165>:  C12  C10  C11  H7  
+ <MOL 165>:  C11  O4   C12  O3  
+ <MOL 165>:  C9   C14  C13  H8  
+ <MOL 165>:  C6   C13  C14  O5  
+ <MOL 165>:  C15  O6   C16  O7  
+ <MOL 166>:  C2   C18  C1   O1  
+ <MOL 166>:  C1   C17  C18  O8  
+ <MOL 166>:  C4   C18  C17  H10 
+ <MOL 166>:  C3   C1   C2   H1  
+ <MOL 166>:  C2   C4   C3   H2  
+ <MOL 166>:  C5   C3   C4   C17 
+ <MOL 166>:  C7   C14  C6   O2  
+ <MOL 166>:  C6   C8   C7   H4  
+ <MOL 166>:  C7   C9   C8   H5  
+ <MOL 166>:  C8   C13  C9   C10 
+ <MOL 166>:  C9   C11  C10  H6  
+ <MOL 166>:  C12  C10  C11  H7  
+ <MOL 166>:  C11  O4   C12  O3  
+ <MOL 166>:  C9   C14  C13  H8  
+ <MOL 166>:  C6   C13  C14  O5  
+ <MOL 166>:  C15  O6   C16  O7  
+ <MOL 167>:  C2   C18  C1   O1  
+ <MOL 167>:  C1   C17  C18  O8  
+ <MOL 167>:  C4   C18  C17  H10 
+ <MOL 167>:  C3   C1   C2   H1  
+ <MOL 167>:  C2   C4   C3   H2  
+ <MOL 167>:  C5   C3   C4   C17 
+ <MOL 167>:  C7   C14  C6   O2  
+ <MOL 167>:  C6   C8   C7   H4  
+ <MOL 167>:  C7   C9   C8   H5  
+ <MOL 167>:  C8   C13  C9   C10 
+ <MOL 167>:  C9   C11  C10  H6  
+ <MOL 167>:  C12  C10  C11  H7  
+ <MOL 167>:  C11  O4   C12  O3  
+ <MOL 167>:  C9   C14  C13  H8  
+ <MOL 167>:  C6   C13  C14  O5  
+ <MOL 167>:  C15  O6   C16  O7  
+ <MOL 168>:  C2   C18  C1   O1  
+ <MOL 168>:  C1   C17  C18  O8  
+ <MOL 168>:  C4   C18  C17  H10 
+ <MOL 168>:  C3   C1   C2   H1  
+ <MOL 168>:  C2   C4   C3   H2  
+ <MOL 168>:  C5   C3   C4   C17 
+ <MOL 168>:  C7   C14  C6   O2  
+ <MOL 168>:  C6   C8   C7   H4  
+ <MOL 168>:  C7   C9   C8   H5  
+ <MOL 168>:  C8   C13  C9   C10 
+ <MOL 168>:  C9   C11  C10  H6  
+ <MOL 168>:  C12  C10  C11  H7  
+ <MOL 168>:  C11  O4   C12  O3  
+ <MOL 168>:  C9   C14  C13  H8  
+ <MOL 168>:  C6   C13  C14  O5  
+ <MOL 168>:  C15  O6   C16  O7  
+ <MOL 169>:  C2   C18  C1   O1  
+ <MOL 169>:  C1   C17  C18  O8  
+ <MOL 169>:  C4   C18  C17  H10 
+ <MOL 169>:  C3   C1   C2   H1  
+ <MOL 169>:  C2   C4   C3   H2  
+ <MOL 169>:  C5   C3   C4   C17 
+ <MOL 169>:  C7   C14  C6   O2  
+ <MOL 169>:  C6   C8   C7   H4  
+ <MOL 169>:  C7   C9   C8   H5  
+ <MOL 169>:  C8   C13  C9   C10 
+ <MOL 169>:  C9   C11  C10  H6  
+ <MOL 169>:  C12  C10  C11  H7  
+ <MOL 169>:  C11  O4   C12  O3  
+ <MOL 169>:  C9   C14  C13  H8  
+ <MOL 169>:  C6   C13  C14  O5  
+ <MOL 169>:  C15  O6   C16  O7  
+ <MOL 170>:  C2   C18  C1   O1  
+ <MOL 170>:  C1   C17  C18  O8  
+ <MOL 170>:  C4   C18  C17  H10 
+ <MOL 170>:  C3   C1   C2   H1  
+ <MOL 170>:  C2   C4   C3   H2  
+ <MOL 170>:  C5   C3   C4   C17 
+ <MOL 170>:  C7   C14  C6   O2  
+ <MOL 170>:  C6   C8   C7   H4  
+ <MOL 170>:  C7   C9   C8   H5  
+ <MOL 170>:  C8   C13  C9   C10 
+ <MOL 170>:  C9   C11  C10  H6  
+ <MOL 170>:  C12  C10  C11  H7  
+ <MOL 170>:  C11  O4   C12  O3  
+ <MOL 170>:  C9   C14  C13  H8  
+ <MOL 170>:  C6   C13  C14  O5  
+ <MOL 170>:  C15  O6   C16  O7  
+ <MOL 171>:  C2   C18  C1   O1  
+ <MOL 171>:  C1   C17  C18  O8  
+ <MOL 171>:  C4   C18  C17  H10 
+ <MOL 171>:  C3   C1   C2   H1  
+ <MOL 171>:  C2   C4   C3   H2  
+ <MOL 171>:  C5   C3   C4   C17 
+ <MOL 171>:  C7   C14  C6   O2  
+ <MOL 171>:  C6   C8   C7   H4  
+ <MOL 171>:  C7   C9   C8   H5  
+ <MOL 171>:  C8   C13  C9   C10 
+ <MOL 171>:  C9   C11  C10  H6  
+ <MOL 171>:  C12  C10  C11  H7  
+ <MOL 171>:  C11  O4   C12  O3  
+ <MOL 171>:  C9   C14  C13  H8  
+ <MOL 171>:  C6   C13  C14  O5  
+ <MOL 171>:  C15  O6   C16  O7  
+ <MOL 172>:  C2   C18  C1   O1  
+ <MOL 172>:  C1   C17  C18  O8  
+ <MOL 172>:  C4   C18  C17  H10 
+ <MOL 172>:  C3   C1   C2   H1  
+ <MOL 172>:  C2   C4   C3   H2  
+ <MOL 172>:  C5   C3   C4   C17 
+ <MOL 172>:  C7   C14  C6   O2  
+ <MOL 172>:  C6   C8   C7   H4  
+ <MOL 172>:  C7   C9   C8   H5  
+ <MOL 172>:  C8   C13  C9   C10 
+ <MOL 172>:  C9   C11  C10  H6  
+ <MOL 172>:  C12  C10  C11  H7  
+ <MOL 172>:  C11  O4   C12  O3  
+ <MOL 172>:  C9   C14  C13  H8  
+ <MOL 172>:  C6   C13  C14  O5  
+ <MOL 172>:  C15  O6   C16  O7  
+ total 624 improper torsions applied
+ 160 improper torsions in old prep form
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CILE	1
+	NLEU	1
+	WAT	56287
+  )
+ (no restraints)
+>     savepdb complex ref_monomer.pdb
+Writing pdb file: ref_monomer.pdb
+   printing CRYST1 record to PDB file with box info
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NLEU -> LEU
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CILE -> ILE
+>     quit
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 3; Notes = 1.
+log started: Wed Jul 10 18:32:36 2024
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff14SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> parm10 = loadamberparams parm10.dat
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+>> frcmod14SB = loadamberparams frcmod.ff14SB
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+>> #
+>> #	Load main chain and terminating amino acid libraries
+>> #
+>> loadOff amino12.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/amino12.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "HYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+> 
+>     source /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.water.tip3p
+----- Source: /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.water.tip3p
+----- Source of /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.water.tip3p done
+>> #
+>> #       Load water and ions for TIP3P + Li/Merz monovalent ions 
+>> #       + Joung-Chetham monovalent ions
+>> #       + Li/Merz highly charged ions (+2 to +4, 12-6 normal usage set)
+>> #
+>> #       Note: the Li/Merz monovalent set is loaded only to get Tl+,
+>> #          Cu+, Ag+ NH4+, H3O+.  Since we load Joung-Cheatham second,
+>> #          the alkali halide parameters come from the Joung-Cheatham set
+>> #
+>> addAtomTypes {
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>>     { "Tl+"  "Tl"  "sp3" }
+>>     { "Cu+"  "Cu"  "sp3" }
+>>     { "Ag+"  "Ag"  "sp3" }
+>>     { "NH4+"  "N"  "sp3" }
+>>     { "H3O+"  "O"  "sp3" }
+>>     { "Be2+" "Be"  "sp3" }
+>>     { "Cu2+" "Cu"  "sp3" }
+>>     { "Ni2+" "Ni"  "sp3" }
+>>     { "Pt2+" "Pt"  "sp3" }
+>>     { "Zn2+" "Zn"  "sp3" }
+>>     { "Co2+" "Co"  "sp3" }
+>>     { "Pd2+" "Pd"  "sp3" }
+>>     { "Ag2+" "Ag"  "sp3" }
+>>     { "Cr2+" "Cr"  "sp3" }
+>>     { "Fe2+" "Fe"  "sp3" }
+>>     { "Mg2+" "Mg"  "sp3" }
+>>     { "V2+"  "V"   "sp3" }
+>>     { "Mn2+" "Mn"  "sp3" }
+>>     { "Hg2+" "Hg"  "sp3" }
+>>     { "Cd2+" "Cd"  "sp3" }
+>>     { "Yb2+" "Yb"  "sp3" }
+>>     { "Ca2+" "Ca"  "sp3" }
+>>     { "Sn2+" "Sn"  "sp3" }
+>>     { "Pb2+" "Pb"  "sp3" }
+>>     { "Eu2+" "Eu"  "sp3" }
+>>     { "Sr2+" "Sr"  "sp3" }
+>>     { "Sm2+" "Sm"  "sp3" }
+>>     { "Ba2+" "Ba"  "sp3" }
+>>     { "Ra2+" "Ra"  "sp3" }
+>>     { "Al3+" "Al"  "sp3" }
+>>     { "Fe3+" "Fe"  "sp3" }
+>>     { "Cr3+" "Cr"  "sp3" }
+>>     { "In3+" "In"  "sp3" }
+>>     { "Tl3+" "Tl"  "sp3" }
+>>     { "Y3+"  "Y"   "sp3" }
+>>     { "La3+" "La"  "sp3" }
+>>     { "Ce3+" "Ce"  "sp3" }
+>>     { "Pr3+" "Pr"  "sp3" }
+>>     { "Nd3+" "Nd"  "sp3" }
+>>     { "Sm3+" "Sm"  "sp3" }
+>>     { "Eu3+" "Eu"  "sp3" }
+>>     { "Gd3+" "Gd"  "sp3" }
+>>     { "Tb3+" "Tb"  "sp3" }
+>>     { "Dy3+" "Dy"  "sp3" }
+>>     { "Er3+" "Er"  "sp3" }
+>>     { "Tm3+" "Tm"  "sp3" }
+>>     { "Lu3+" "Lu"  "sp3" }
+>>     { "Hf4+" "Hf"  "sp3" }
+>>     { "Zr4+" "Zr"  "sp3" }
+>>     { "Ce4+" "Ce"  "sp3" }
+>>     { "U4+"  "U"   "sp3" }
+>>     { "Pu4+" "Pu"  "sp3" }
+>>     { "Th4+" "Th"  "sp3" }
+>> }
+>> loadOff atomic_ions.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPC3POLBOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> loadAmberParams frcmod.tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+>> loadAmberParams frcmod.ions1lm_126_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+>> loadAmberParams frcmod.ionsjc_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>> loadAmberParams frcmod.ions234lm_126_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ions234lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP3P water model (12-6 normal usage set)
+>> 
+> 
+>     source /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.gaff
+----- Source: /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.gaff
+----- Source of /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.gaff done
+>> logFile leap.log
+log started: Wed Jul 10 18:32:36 2024
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the general Amber Force field.
+>> #       This file is mostly for use with Antechamber
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "h1"  "H" "sp3" }
+>> 	{ "h2"  "H" "sp3" }
+>> 	{ "h3"  "H" "sp3" }
+>> 	{ "h4"  "H" "sp3" }
+>> 	{ "h5"  "H" "sp3" }
+>> 	{ "ha"  "H" "sp3" }
+>> 	{ "hc"  "H" "sp3" }
+>> 	{ "hn"  "H" "sp3" }
+>> 	{ "ho"  "H" "sp3" }
+>> 	{ "hp"  "H" "sp3" }
+>> 	{ "hs"  "H" "sp3" }
+>> 	{ "hw"  "H" "sp3" }
+>> 	{ "hx"  "H" "sp3" }
+>> 	{ "o"  "O" "sp2" }
+>> 	{ "o2"  "O" "sp2" }
+>> 	{ "oh"  "O" "sp3" }
+>> 	{ "op"  "O" "sp3" }
+>> 	{ "oq"  "O" "sp3" }
+>> 	{ "os"  "O" "sp3" }
+>> 	{ "ow"  "O" "sp3" }
+>> 	{ "c"  "C" "sp2" }
+>> 	{ "c1"  "C" "sp2" }
+>> 	{ "c2"  "C" "sp2" }
+>> 	{ "c3"  "C" "sp3" }
+>> 	{ "ca"  "C" "sp2" }
+>> 	{ "cc"  "C" "sp2" }
+>> 	{ "cd"  "C" "sp2" }
+>> 	{ "ce"  "C" "sp2" }
+>> 	{ "cf"  "C" "sp2" }
+>> 	{ "cg"  "C" "sp2" }
+>> 	{ "ch"  "C" "sp2" }
+>> 	{ "cp"  "C" "sp2" }
+>> 	{ "cq"  "C" "sp2" }
+>> 	{ "cu"  "C" "sp2" }
+>> 	{ "cv"  "C" "sp2" }
+>> 	{ "cx"  "C" "sp2" }
+>> 	{ "cy"  "C" "sp2" }
+>> 	{ "cz"  "C" "sp2" }
+>> 	{ "n"   "N" "sp2" }
+>> 	{ "n1"  "N" "sp2" }
+>> 	{ "n2"  "N" "sp2" }
+>> 	{ "n3"  "N" "sp3" }
+>> 	{ "n4"  "N" "sp3" }
+>> 	{ "na"  "N" "sp2" }
+>> 	{ "nb"  "N" "sp2" }
+>> 	{ "nc"  "N" "sp2" }
+>> 	{ "nd"  "N" "sp2" }
+>> 	{ "ne"  "N" "sp2" }
+>> 	{ "nf"  "N" "sp2" }
+>> 	{ "nh"  "N" "sp2" }
+>> 	{ "ni"  "N" "sp2" }
+>> 	{ "nj"  "N" "sp2" }
+>> 	{ "nk"  "N" "sp3" }
+>> 	{ "nl"  "N" "sp3" }
+>> 	{ "nm"  "N" "sp2" }
+>> 	{ "nn"  "N" "sp2" }
+>> 	{ "no"  "N" "sp2" }
+>> 	{ "np"  "N" "sp3" }
+>> 	{ "nq"  "N" "sp3" }
+>> 	{ "s"   "S" "sp2" }
+>> 	{ "s2"   "S" "sp2" }
+>> 	{ "s3"   "S" "sp3" }
+>> 	{ "s4"   "S" "sp3" }
+>> 	{ "s6"   "S" "sp3" }
+>> 	{ "sh"   "S" "sp3" }
+>> 	{ "sp"   "S" "sp3" }
+>> 	{ "sq"   "S" "sp3" }
+>> 	{ "ss"   "S" "sp3" }
+>> 	{ "sx"   "S" "sp3" }
+>> 	{ "sy"   "S" "sp3" }
+>> 	{ "p2"   "P" "sp2" }
+>> 	{ "p3"   "P" "sp3" }
+>> 	{ "p4"   "P" "sp3" }
+>> 	{ "p5"   "P" "sp3" }
+>> 	{ "pb"   "P" "sp3" }
+>> 	{ "pc"   "P" "sp3" }
+>> 	{ "pd"   "P" "sp3" }
+>> 	{ "pe"   "P" "sp3" }
+>> 	{ "pf"   "P" "sp3" }
+>> 	{ "px"   "P" "sp3" }
+>> 	{ "py"   "P" "sp3" }
+>> 	{ "f"   "F" "sp3" }
+>> 	{ "cl"  "Cl" "sp3" }
+>> 	{ "br"  "Br" "sp3" }
+>> 	{ "i"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the general force field parameter set.
+>> #
+>> gaff = loadamberparams gaff.dat
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/gaff.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 1.81, May 2017)
+> 
+>     loadamberparams /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ionsjc_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>     loadamberparams EFZ.frcmod
+Loading parameters: ./EFZ.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+>     loadamberprep EFZ_sybyl_resp_gaff.prepc
+Loading Prep file: ./EFZ_sybyl_resp_gaff.prepc
+Loaded UNIT: MOL
+>     complex  = loadpdb /home/ron/work/NEW_SIMULATIONBOXES/test2/2blg/cab/2blg.pdb_box_size_8.999999999999998_8.999999999999998_8.999999999999998/2blg.pdb_8.999999999999998_8.999999999999998_8.999999999999998_cab_ph9_10_mol_with_TER.pdb # change: name of pdb file, protonate first
+Loading PDB file: /home/ron/work/NEW_SIMULATIONBOXES/test2/2blg/cab/2blg.pdb_box_size_8.999999999999998_8.999999999999998_8.999999999999998/2blg.pdb_8.999999999999998_8.999999999999998_8.999999999999998_cab_ph9_10_mol_with_TER.pdb
+Matching PDB residue names to LEaP variables.
+Mapped residue LEU, term: Terminal/beginning, seq. number: 0 to: NLEU.
+Mapped residue ILE, term: Terminal/last, seq. number: 161 to: CILE.
+  total atoms in file: 2965
+>     bond complex.106.SG complex.119.SG # change: number of residues that correspond to CYS
+>     bond complex.66.SG complex.160.SG # change: number of residues that correspond to CYS
+>     solvateBox complex TIP3PBOX 13.5
+  Solute vdw bounding box:              96.374 91.232 88.397
+  Total bounding box for atom centers:  123.374 118.232 115.397
+  Solvent unit box:                     18.774 18.774 18.774
+The number of boxes:  x= 7  y= 7  z= 7
+  Total vdw box size:                   126.137 121.067 118.654 angstroms.
+  Volume: 1811967.780 A^3 
+  Total mass 961621.522 amu,  Density 0.881 g/cc
+  Added 52160 residues.
+>     charge complex
+Total unperturbed charge: -38.999990
+Total perturbed charge:   -38.999990
+>     addionsrand complex Na+ 1 Cl- 1 # change: ionic strength of the experiment & 0 net charge for the system
+Adding 2 counter ions to "complex". 52158 solvent molecules will remain.
+0: Placed Na+ in complex at (5.60, -0.50, 16.97).
+Placed Cl- in complex at (-52.58, -9.03, 17.54).
+>     charge complex
+Total unperturbed charge: -38.999990
+Total perturbed charge:   -38.999990
+>     saveamberparm complex ref.prmtop ref.inpcrd
+Checking Unit.
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Warning!
+The unperturbed charge of the unit (-38.999990) is not zero.
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+old PREP-specified impropers:
+ <MOL 163>:  C2   C18  C1   O1  
+ <MOL 163>:  C1   C17  C18  O8  
+ <MOL 163>:  C4   C18  C17  H10 
+ <MOL 163>:  C3   C1   C2   H1  
+ <MOL 163>:  C2   C4   C3   H2  
+ <MOL 163>:  C5   C3   C4   C17 
+ <MOL 163>:  C7   C14  C6   O2  
+ <MOL 163>:  C6   C8   C7   H4  
+ <MOL 163>:  C7   C9   C8   H5  
+ <MOL 163>:  C8   C13  C9   C10 
+ <MOL 163>:  C9   C11  C10  H6  
+ <MOL 163>:  C12  C10  C11  H7  
+ <MOL 163>:  C11  O4   C12  O3  
+ <MOL 163>:  C9   C14  C13  H8  
+ <MOL 163>:  C6   C13  C14  O5  
+ <MOL 163>:  C15  O6   C16  O7  
+ <MOL 164>:  C2   C18  C1   O1  
+ <MOL 164>:  C1   C17  C18  O8  
+ <MOL 164>:  C4   C18  C17  H10 
+ <MOL 164>:  C3   C1   C2   H1  
+ <MOL 164>:  C2   C4   C3   H2  
+ <MOL 164>:  C5   C3   C4   C17 
+ <MOL 164>:  C7   C14  C6   O2  
+ <MOL 164>:  C6   C8   C7   H4  
+ <MOL 164>:  C7   C9   C8   H5  
+ <MOL 164>:  C8   C13  C9   C10 
+ <MOL 164>:  C9   C11  C10  H6  
+ <MOL 164>:  C12  C10  C11  H7  
+ <MOL 164>:  C11  O4   C12  O3  
+ <MOL 164>:  C9   C14  C13  H8  
+ <MOL 164>:  C6   C13  C14  O5  
+ <MOL 164>:  C15  O6   C16  O7  
+ <MOL 165>:  C2   C18  C1   O1  
+ <MOL 165>:  C1   C17  C18  O8  
+ <MOL 165>:  C4   C18  C17  H10 
+ <MOL 165>:  C3   C1   C2   H1  
+ <MOL 165>:  C2   C4   C3   H2  
+ <MOL 165>:  C5   C3   C4   C17 
+ <MOL 165>:  C7   C14  C6   O2  
+ <MOL 165>:  C6   C8   C7   H4  
+ <MOL 165>:  C7   C9   C8   H5  
+ <MOL 165>:  C8   C13  C9   C10 
+ <MOL 165>:  C9   C11  C10  H6  
+ <MOL 165>:  C12  C10  C11  H7  
+ <MOL 165>:  C11  O4   C12  O3  
+ <MOL 165>:  C9   C14  C13  H8  
+ <MOL 165>:  C6   C13  C14  O5  
+ <MOL 165>:  C15  O6   C16  O7  
+ <MOL 166>:  C2   C18  C1   O1  
+ <MOL 166>:  C1   C17  C18  O8  
+ <MOL 166>:  C4   C18  C17  H10 
+ <MOL 166>:  C3   C1   C2   H1  
+ <MOL 166>:  C2   C4   C3   H2  
+ <MOL 166>:  C5   C3   C4   C17 
+ <MOL 166>:  C7   C14  C6   O2  
+ <MOL 166>:  C6   C8   C7   H4  
+ <MOL 166>:  C7   C9   C8   H5  
+ <MOL 166>:  C8   C13  C9   C10 
+ <MOL 166>:  C9   C11  C10  H6  
+ <MOL 166>:  C12  C10  C11  H7  
+ <MOL 166>:  C11  O4   C12  O3  
+ <MOL 166>:  C9   C14  C13  H8  
+ <MOL 166>:  C6   C13  C14  O5  
+ <MOL 166>:  C15  O6   C16  O7  
+ <MOL 167>:  C2   C18  C1   O1  
+ <MOL 167>:  C1   C17  C18  O8  
+ <MOL 167>:  C4   C18  C17  H10 
+ <MOL 167>:  C3   C1   C2   H1  
+ <MOL 167>:  C2   C4   C3   H2  
+ <MOL 167>:  C5   C3   C4   C17 
+ <MOL 167>:  C7   C14  C6   O2  
+ <MOL 167>:  C6   C8   C7   H4  
+ <MOL 167>:  C7   C9   C8   H5  
+ <MOL 167>:  C8   C13  C9   C10 
+ <MOL 167>:  C9   C11  C10  H6  
+ <MOL 167>:  C12  C10  C11  H7  
+ <MOL 167>:  C11  O4   C12  O3  
+ <MOL 167>:  C9   C14  C13  H8  
+ <MOL 167>:  C6   C13  C14  O5  
+ <MOL 167>:  C15  O6   C16  O7  
+ <MOL 168>:  C2   C18  C1   O1  
+ <MOL 168>:  C1   C17  C18  O8  
+ <MOL 168>:  C4   C18  C17  H10 
+ <MOL 168>:  C3   C1   C2   H1  
+ <MOL 168>:  C2   C4   C3   H2  
+ <MOL 168>:  C5   C3   C4   C17 
+ <MOL 168>:  C7   C14  C6   O2  
+ <MOL 168>:  C6   C8   C7   H4  
+ <MOL 168>:  C7   C9   C8   H5  
+ <MOL 168>:  C8   C13  C9   C10 
+ <MOL 168>:  C9   C11  C10  H6  
+ <MOL 168>:  C12  C10  C11  H7  
+ <MOL 168>:  C11  O4   C12  O3  
+ <MOL 168>:  C9   C14  C13  H8  
+ <MOL 168>:  C6   C13  C14  O5  
+ <MOL 168>:  C15  O6   C16  O7  
+ <MOL 169>:  C2   C18  C1   O1  
+ <MOL 169>:  C1   C17  C18  O8  
+ <MOL 169>:  C4   C18  C17  H10 
+ <MOL 169>:  C3   C1   C2   H1  
+ <MOL 169>:  C2   C4   C3   H2  
+ <MOL 169>:  C5   C3   C4   C17 
+ <MOL 169>:  C7   C14  C6   O2  
+ <MOL 169>:  C6   C8   C7   H4  
+ <MOL 169>:  C7   C9   C8   H5  
+ <MOL 169>:  C8   C13  C9   C10 
+ <MOL 169>:  C9   C11  C10  H6  
+ <MOL 169>:  C12  C10  C11  H7  
+ <MOL 169>:  C11  O4   C12  O3  
+ <MOL 169>:  C9   C14  C13  H8  
+ <MOL 169>:  C6   C13  C14  O5  
+ <MOL 169>:  C15  O6   C16  O7  
+ <MOL 170>:  C2   C18  C1   O1  
+ <MOL 170>:  C1   C17  C18  O8  
+ <MOL 170>:  C4   C18  C17  H10 
+ <MOL 170>:  C3   C1   C2   H1  
+ <MOL 170>:  C2   C4   C3   H2  
+ <MOL 170>:  C5   C3   C4   C17 
+ <MOL 170>:  C7   C14  C6   O2  
+ <MOL 170>:  C6   C8   C7   H4  
+ <MOL 170>:  C7   C9   C8   H5  
+ <MOL 170>:  C8   C13  C9   C10 
+ <MOL 170>:  C9   C11  C10  H6  
+ <MOL 170>:  C12  C10  C11  H7  
+ <MOL 170>:  C11  O4   C12  O3  
+ <MOL 170>:  C9   C14  C13  H8  
+ <MOL 170>:  C6   C13  C14  O5  
+ <MOL 170>:  C15  O6   C16  O7  
+ <MOL 171>:  C2   C18  C1   O1  
+ <MOL 171>:  C1   C17  C18  O8  
+ <MOL 171>:  C4   C18  C17  H10 
+ <MOL 171>:  C3   C1   C2   H1  
+ <MOL 171>:  C2   C4   C3   H2  
+ <MOL 171>:  C5   C3   C4   C17 
+ <MOL 171>:  C7   C14  C6   O2  
+ <MOL 171>:  C6   C8   C7   H4  
+ <MOL 171>:  C7   C9   C8   H5  
+ <MOL 171>:  C8   C13  C9   C10 
+ <MOL 171>:  C9   C11  C10  H6  
+ <MOL 171>:  C12  C10  C11  H7  
+ <MOL 171>:  C11  O4   C12  O3  
+ <MOL 171>:  C9   C14  C13  H8  
+ <MOL 171>:  C6   C13  C14  O5  
+ <MOL 171>:  C15  O6   C16  O7  
+ <MOL 172>:  C2   C18  C1   O1  
+ <MOL 172>:  C1   C17  C18  O8  
+ <MOL 172>:  C4   C18  C17  H10 
+ <MOL 172>:  C3   C1   C2   H1  
+ <MOL 172>:  C2   C4   C3   H2  
+ <MOL 172>:  C5   C3   C4   C17 
+ <MOL 172>:  C7   C14  C6   O2  
+ <MOL 172>:  C6   C8   C7   H4  
+ <MOL 172>:  C7   C9   C8   H5  
+ <MOL 172>:  C8   C13  C9   C10 
+ <MOL 172>:  C9   C11  C10  H6  
+ <MOL 172>:  C12  C10  C11  H7  
+ <MOL 172>:  C11  O4   C12  O3  
+ <MOL 172>:  C9   C14  C13  H8  
+ <MOL 172>:  C6   C13  C14  O5  
+ <MOL 172>:  C15  O6   C16  O7  
+ total 624 improper torsions applied
+ 160 improper torsions in old prep form
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CILE	1
+	NLEU	1
+	WAT	52158
+  )
+ (no restraints)
+>     savepdb complex ref_monomer.pdb
+Writing pdb file: ref_monomer.pdb
+   printing CRYST1 record to PDB file with box info
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NLEU -> LEU
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CILE -> ILE
+>     quit
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 3; Notes = 1.
+log started: Wed Jul 10 18:33:00 2024
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff14SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> parm10 = loadamberparams parm10.dat
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+>> frcmod14SB = loadamberparams frcmod.ff14SB
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+>> #
+>> #	Load main chain and terminating amino acid libraries
+>> #
+>> loadOff amino12.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/amino12.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "HYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+> 
+>     source /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.water.tip3p
+----- Source: /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.water.tip3p
+----- Source of /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.water.tip3p done
+>> #
+>> #       Load water and ions for TIP3P + Li/Merz monovalent ions 
+>> #       + Joung-Chetham monovalent ions
+>> #       + Li/Merz highly charged ions (+2 to +4, 12-6 normal usage set)
+>> #
+>> #       Note: the Li/Merz monovalent set is loaded only to get Tl+,
+>> #          Cu+, Ag+ NH4+, H3O+.  Since we load Joung-Cheatham second,
+>> #          the alkali halide parameters come from the Joung-Cheatham set
+>> #
+>> addAtomTypes {
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>>     { "Tl+"  "Tl"  "sp3" }
+>>     { "Cu+"  "Cu"  "sp3" }
+>>     { "Ag+"  "Ag"  "sp3" }
+>>     { "NH4+"  "N"  "sp3" }
+>>     { "H3O+"  "O"  "sp3" }
+>>     { "Be2+" "Be"  "sp3" }
+>>     { "Cu2+" "Cu"  "sp3" }
+>>     { "Ni2+" "Ni"  "sp3" }
+>>     { "Pt2+" "Pt"  "sp3" }
+>>     { "Zn2+" "Zn"  "sp3" }
+>>     { "Co2+" "Co"  "sp3" }
+>>     { "Pd2+" "Pd"  "sp3" }
+>>     { "Ag2+" "Ag"  "sp3" }
+>>     { "Cr2+" "Cr"  "sp3" }
+>>     { "Fe2+" "Fe"  "sp3" }
+>>     { "Mg2+" "Mg"  "sp3" }
+>>     { "V2+"  "V"   "sp3" }
+>>     { "Mn2+" "Mn"  "sp3" }
+>>     { "Hg2+" "Hg"  "sp3" }
+>>     { "Cd2+" "Cd"  "sp3" }
+>>     { "Yb2+" "Yb"  "sp3" }
+>>     { "Ca2+" "Ca"  "sp3" }
+>>     { "Sn2+" "Sn"  "sp3" }
+>>     { "Pb2+" "Pb"  "sp3" }
+>>     { "Eu2+" "Eu"  "sp3" }
+>>     { "Sr2+" "Sr"  "sp3" }
+>>     { "Sm2+" "Sm"  "sp3" }
+>>     { "Ba2+" "Ba"  "sp3" }
+>>     { "Ra2+" "Ra"  "sp3" }
+>>     { "Al3+" "Al"  "sp3" }
+>>     { "Fe3+" "Fe"  "sp3" }
+>>     { "Cr3+" "Cr"  "sp3" }
+>>     { "In3+" "In"  "sp3" }
+>>     { "Tl3+" "Tl"  "sp3" }
+>>     { "Y3+"  "Y"   "sp3" }
+>>     { "La3+" "La"  "sp3" }
+>>     { "Ce3+" "Ce"  "sp3" }
+>>     { "Pr3+" "Pr"  "sp3" }
+>>     { "Nd3+" "Nd"  "sp3" }
+>>     { "Sm3+" "Sm"  "sp3" }
+>>     { "Eu3+" "Eu"  "sp3" }
+>>     { "Gd3+" "Gd"  "sp3" }
+>>     { "Tb3+" "Tb"  "sp3" }
+>>     { "Dy3+" "Dy"  "sp3" }
+>>     { "Er3+" "Er"  "sp3" }
+>>     { "Tm3+" "Tm"  "sp3" }
+>>     { "Lu3+" "Lu"  "sp3" }
+>>     { "Hf4+" "Hf"  "sp3" }
+>>     { "Zr4+" "Zr"  "sp3" }
+>>     { "Ce4+" "Ce"  "sp3" }
+>>     { "U4+"  "U"   "sp3" }
+>>     { "Pu4+" "Pu"  "sp3" }
+>>     { "Th4+" "Th"  "sp3" }
+>> }
+>> loadOff atomic_ions.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPC3POLBOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> loadAmberParams frcmod.tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+>> loadAmberParams frcmod.ions1lm_126_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+>> loadAmberParams frcmod.ionsjc_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>> loadAmberParams frcmod.ions234lm_126_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ions234lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP3P water model (12-6 normal usage set)
+>> 
+> 
+>     source /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.gaff
+----- Source: /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.gaff
+----- Source of /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.gaff done
+>> logFile leap.log
+log started: Wed Jul 10 18:33:00 2024
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the general Amber Force field.
+>> #       This file is mostly for use with Antechamber
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "h1"  "H" "sp3" }
+>> 	{ "h2"  "H" "sp3" }
+>> 	{ "h3"  "H" "sp3" }
+>> 	{ "h4"  "H" "sp3" }
+>> 	{ "h5"  "H" "sp3" }
+>> 	{ "ha"  "H" "sp3" }
+>> 	{ "hc"  "H" "sp3" }
+>> 	{ "hn"  "H" "sp3" }
+>> 	{ "ho"  "H" "sp3" }
+>> 	{ "hp"  "H" "sp3" }
+>> 	{ "hs"  "H" "sp3" }
+>> 	{ "hw"  "H" "sp3" }
+>> 	{ "hx"  "H" "sp3" }
+>> 	{ "o"  "O" "sp2" }
+>> 	{ "o2"  "O" "sp2" }
+>> 	{ "oh"  "O" "sp3" }
+>> 	{ "op"  "O" "sp3" }
+>> 	{ "oq"  "O" "sp3" }
+>> 	{ "os"  "O" "sp3" }
+>> 	{ "ow"  "O" "sp3" }
+>> 	{ "c"  "C" "sp2" }
+>> 	{ "c1"  "C" "sp2" }
+>> 	{ "c2"  "C" "sp2" }
+>> 	{ "c3"  "C" "sp3" }
+>> 	{ "ca"  "C" "sp2" }
+>> 	{ "cc"  "C" "sp2" }
+>> 	{ "cd"  "C" "sp2" }
+>> 	{ "ce"  "C" "sp2" }
+>> 	{ "cf"  "C" "sp2" }
+>> 	{ "cg"  "C" "sp2" }
+>> 	{ "ch"  "C" "sp2" }
+>> 	{ "cp"  "C" "sp2" }
+>> 	{ "cq"  "C" "sp2" }
+>> 	{ "cu"  "C" "sp2" }
+>> 	{ "cv"  "C" "sp2" }
+>> 	{ "cx"  "C" "sp2" }
+>> 	{ "cy"  "C" "sp2" }
+>> 	{ "cz"  "C" "sp2" }
+>> 	{ "n"   "N" "sp2" }
+>> 	{ "n1"  "N" "sp2" }
+>> 	{ "n2"  "N" "sp2" }
+>> 	{ "n3"  "N" "sp3" }
+>> 	{ "n4"  "N" "sp3" }
+>> 	{ "na"  "N" "sp2" }
+>> 	{ "nb"  "N" "sp2" }
+>> 	{ "nc"  "N" "sp2" }
+>> 	{ "nd"  "N" "sp2" }
+>> 	{ "ne"  "N" "sp2" }
+>> 	{ "nf"  "N" "sp2" }
+>> 	{ "nh"  "N" "sp2" }
+>> 	{ "ni"  "N" "sp2" }
+>> 	{ "nj"  "N" "sp2" }
+>> 	{ "nk"  "N" "sp3" }
+>> 	{ "nl"  "N" "sp3" }
+>> 	{ "nm"  "N" "sp2" }
+>> 	{ "nn"  "N" "sp2" }
+>> 	{ "no"  "N" "sp2" }
+>> 	{ "np"  "N" "sp3" }
+>> 	{ "nq"  "N" "sp3" }
+>> 	{ "s"   "S" "sp2" }
+>> 	{ "s2"   "S" "sp2" }
+>> 	{ "s3"   "S" "sp3" }
+>> 	{ "s4"   "S" "sp3" }
+>> 	{ "s6"   "S" "sp3" }
+>> 	{ "sh"   "S" "sp3" }
+>> 	{ "sp"   "S" "sp3" }
+>> 	{ "sq"   "S" "sp3" }
+>> 	{ "ss"   "S" "sp3" }
+>> 	{ "sx"   "S" "sp3" }
+>> 	{ "sy"   "S" "sp3" }
+>> 	{ "p2"   "P" "sp2" }
+>> 	{ "p3"   "P" "sp3" }
+>> 	{ "p4"   "P" "sp3" }
+>> 	{ "p5"   "P" "sp3" }
+>> 	{ "pb"   "P" "sp3" }
+>> 	{ "pc"   "P" "sp3" }
+>> 	{ "pd"   "P" "sp3" }
+>> 	{ "pe"   "P" "sp3" }
+>> 	{ "pf"   "P" "sp3" }
+>> 	{ "px"   "P" "sp3" }
+>> 	{ "py"   "P" "sp3" }
+>> 	{ "f"   "F" "sp3" }
+>> 	{ "cl"  "Cl" "sp3" }
+>> 	{ "br"  "Br" "sp3" }
+>> 	{ "i"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the general force field parameter set.
+>> #
+>> gaff = loadamberparams gaff.dat
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/gaff.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 1.81, May 2017)
+> 
+>     loadamberparams /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ionsjc_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>     loadamberparams EFZ.frcmod
+Loading parameters: ./EFZ.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+>     loadamberprep EFZ_sybyl_resp_gaff.prepc
+Loading Prep file: ./EFZ_sybyl_resp_gaff.prepc
+Loaded UNIT: MOL
+>     complex  = loadpdb /home/ron/work/NEW_SIMULATIONBOXES/test2/2blg/cab/2blg.pdb_box_size_8.999999999999998_8.999999999999998_8.999999999999998/2blg.pdb_8.999999999999998_8.999999999999998_8.999999999999998_cab_ph9_10_mol_with_TER.pdb # change: name of pdb file, protonate first
+Loading PDB file: /home/ron/work/NEW_SIMULATIONBOXES/test2/2blg/cab/2blg.pdb_box_size_8.999999999999998_8.999999999999998_8.999999999999998/2blg.pdb_8.999999999999998_8.999999999999998_8.999999999999998_cab_ph9_10_mol_with_TER.pdb
+Matching PDB residue names to LEaP variables.
+Mapped residue LEU, term: Terminal/beginning, seq. number: 0 to: NLEU.
+Mapped residue ILE, term: Terminal/last, seq. number: 161 to: CILE.
+  total atoms in file: 2965
+>     bond complex.106.SG complex.119.SG # change: number of residues that correspond to CYS
+>     bond complex.66.SG complex.160.SG # change: number of residues that correspond to CYS
+>     solvateBox complex TIP3PBOX 13.4
+  Solute vdw bounding box:              96.374 91.232 88.397
+  Total bounding box for atom centers:  123.174 118.032 115.197
+  Solvent unit box:                     18.774 18.774 18.774
+The number of boxes:  x= 7  y= 7  z= 7
+  Total vdw box size:                   126.137 121.067 118.320 angstroms.
+  Volume: 1806855.483 A^3 
+  Total mass 955784.338 amu,  Density 0.878 g/cc
+  Added 51836 residues.
+>     charge complex
+Total unperturbed charge: -38.999990
+Total perturbed charge:   -38.999990
+>     addionsrand complex Na+ 1 Cl- 1 # change: ionic strength of the experiment & 0 net charge for the system
+Adding 2 counter ions to "complex". 51834 solvent molecules will remain.
+0: Placed Na+ in complex at (21.29, -10.66, -51.40).
+Placed Cl- in complex at (-23.02, -26.37, -14.33).
+>     charge complex
+Total unperturbed charge: -38.999990
+Total perturbed charge:   -38.999990
+>     saveamberparm complex ref.prmtop ref.inpcrd
+Checking Unit.
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Warning!
+The unperturbed charge of the unit (-38.999990) is not zero.
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+old PREP-specified impropers:
+ <MOL 163>:  C2   C18  C1   O1  
+ <MOL 163>:  C1   C17  C18  O8  
+ <MOL 163>:  C4   C18  C17  H10 
+ <MOL 163>:  C3   C1   C2   H1  
+ <MOL 163>:  C2   C4   C3   H2  
+ <MOL 163>:  C5   C3   C4   C17 
+ <MOL 163>:  C7   C14  C6   O2  
+ <MOL 163>:  C6   C8   C7   H4  
+ <MOL 163>:  C7   C9   C8   H5  
+ <MOL 163>:  C8   C13  C9   C10 
+ <MOL 163>:  C9   C11  C10  H6  
+ <MOL 163>:  C12  C10  C11  H7  
+ <MOL 163>:  C11  O4   C12  O3  
+ <MOL 163>:  C9   C14  C13  H8  
+ <MOL 163>:  C6   C13  C14  O5  
+ <MOL 163>:  C15  O6   C16  O7  
+ <MOL 164>:  C2   C18  C1   O1  
+ <MOL 164>:  C1   C17  C18  O8  
+ <MOL 164>:  C4   C18  C17  H10 
+ <MOL 164>:  C3   C1   C2   H1  
+ <MOL 164>:  C2   C4   C3   H2  
+ <MOL 164>:  C5   C3   C4   C17 
+ <MOL 164>:  C7   C14  C6   O2  
+ <MOL 164>:  C6   C8   C7   H4  
+ <MOL 164>:  C7   C9   C8   H5  
+ <MOL 164>:  C8   C13  C9   C10 
+ <MOL 164>:  C9   C11  C10  H6  
+ <MOL 164>:  C12  C10  C11  H7  
+ <MOL 164>:  C11  O4   C12  O3  
+ <MOL 164>:  C9   C14  C13  H8  
+ <MOL 164>:  C6   C13  C14  O5  
+ <MOL 164>:  C15  O6   C16  O7  
+ <MOL 165>:  C2   C18  C1   O1  
+ <MOL 165>:  C1   C17  C18  O8  
+ <MOL 165>:  C4   C18  C17  H10 
+ <MOL 165>:  C3   C1   C2   H1  
+ <MOL 165>:  C2   C4   C3   H2  
+ <MOL 165>:  C5   C3   C4   C17 
+ <MOL 165>:  C7   C14  C6   O2  
+ <MOL 165>:  C6   C8   C7   H4  
+ <MOL 165>:  C7   C9   C8   H5  
+ <MOL 165>:  C8   C13  C9   C10 
+ <MOL 165>:  C9   C11  C10  H6  
+ <MOL 165>:  C12  C10  C11  H7  
+ <MOL 165>:  C11  O4   C12  O3  
+ <MOL 165>:  C9   C14  C13  H8  
+ <MOL 165>:  C6   C13  C14  O5  
+ <MOL 165>:  C15  O6   C16  O7  
+ <MOL 166>:  C2   C18  C1   O1  
+ <MOL 166>:  C1   C17  C18  O8  
+ <MOL 166>:  C4   C18  C17  H10 
+ <MOL 166>:  C3   C1   C2   H1  
+ <MOL 166>:  C2   C4   C3   H2  
+ <MOL 166>:  C5   C3   C4   C17 
+ <MOL 166>:  C7   C14  C6   O2  
+ <MOL 166>:  C6   C8   C7   H4  
+ <MOL 166>:  C7   C9   C8   H5  
+ <MOL 166>:  C8   C13  C9   C10 
+ <MOL 166>:  C9   C11  C10  H6  
+ <MOL 166>:  C12  C10  C11  H7  
+ <MOL 166>:  C11  O4   C12  O3  
+ <MOL 166>:  C9   C14  C13  H8  
+ <MOL 166>:  C6   C13  C14  O5  
+ <MOL 166>:  C15  O6   C16  O7  
+ <MOL 167>:  C2   C18  C1   O1  
+ <MOL 167>:  C1   C17  C18  O8  
+ <MOL 167>:  C4   C18  C17  H10 
+ <MOL 167>:  C3   C1   C2   H1  
+ <MOL 167>:  C2   C4   C3   H2  
+ <MOL 167>:  C5   C3   C4   C17 
+ <MOL 167>:  C7   C14  C6   O2  
+ <MOL 167>:  C6   C8   C7   H4  
+ <MOL 167>:  C7   C9   C8   H5  
+ <MOL 167>:  C8   C13  C9   C10 
+ <MOL 167>:  C9   C11  C10  H6  
+ <MOL 167>:  C12  C10  C11  H7  
+ <MOL 167>:  C11  O4   C12  O3  
+ <MOL 167>:  C9   C14  C13  H8  
+ <MOL 167>:  C6   C13  C14  O5  
+ <MOL 167>:  C15  O6   C16  O7  
+ <MOL 168>:  C2   C18  C1   O1  
+ <MOL 168>:  C1   C17  C18  O8  
+ <MOL 168>:  C4   C18  C17  H10 
+ <MOL 168>:  C3   C1   C2   H1  
+ <MOL 168>:  C2   C4   C3   H2  
+ <MOL 168>:  C5   C3   C4   C17 
+ <MOL 168>:  C7   C14  C6   O2  
+ <MOL 168>:  C6   C8   C7   H4  
+ <MOL 168>:  C7   C9   C8   H5  
+ <MOL 168>:  C8   C13  C9   C10 
+ <MOL 168>:  C9   C11  C10  H6  
+ <MOL 168>:  C12  C10  C11  H7  
+ <MOL 168>:  C11  O4   C12  O3  
+ <MOL 168>:  C9   C14  C13  H8  
+ <MOL 168>:  C6   C13  C14  O5  
+ <MOL 168>:  C15  O6   C16  O7  
+ <MOL 169>:  C2   C18  C1   O1  
+ <MOL 169>:  C1   C17  C18  O8  
+ <MOL 169>:  C4   C18  C17  H10 
+ <MOL 169>:  C3   C1   C2   H1  
+ <MOL 169>:  C2   C4   C3   H2  
+ <MOL 169>:  C5   C3   C4   C17 
+ <MOL 169>:  C7   C14  C6   O2  
+ <MOL 169>:  C6   C8   C7   H4  
+ <MOL 169>:  C7   C9   C8   H5  
+ <MOL 169>:  C8   C13  C9   C10 
+ <MOL 169>:  C9   C11  C10  H6  
+ <MOL 169>:  C12  C10  C11  H7  
+ <MOL 169>:  C11  O4   C12  O3  
+ <MOL 169>:  C9   C14  C13  H8  
+ <MOL 169>:  C6   C13  C14  O5  
+ <MOL 169>:  C15  O6   C16  O7  
+ <MOL 170>:  C2   C18  C1   O1  
+ <MOL 170>:  C1   C17  C18  O8  
+ <MOL 170>:  C4   C18  C17  H10 
+ <MOL 170>:  C3   C1   C2   H1  
+ <MOL 170>:  C2   C4   C3   H2  
+ <MOL 170>:  C5   C3   C4   C17 
+ <MOL 170>:  C7   C14  C6   O2  
+ <MOL 170>:  C6   C8   C7   H4  
+ <MOL 170>:  C7   C9   C8   H5  
+ <MOL 170>:  C8   C13  C9   C10 
+ <MOL 170>:  C9   C11  C10  H6  
+ <MOL 170>:  C12  C10  C11  H7  
+ <MOL 170>:  C11  O4   C12  O3  
+ <MOL 170>:  C9   C14  C13  H8  
+ <MOL 170>:  C6   C13  C14  O5  
+ <MOL 170>:  C15  O6   C16  O7  
+ <MOL 171>:  C2   C18  C1   O1  
+ <MOL 171>:  C1   C17  C18  O8  
+ <MOL 171>:  C4   C18  C17  H10 
+ <MOL 171>:  C3   C1   C2   H1  
+ <MOL 171>:  C2   C4   C3   H2  
+ <MOL 171>:  C5   C3   C4   C17 
+ <MOL 171>:  C7   C14  C6   O2  
+ <MOL 171>:  C6   C8   C7   H4  
+ <MOL 171>:  C7   C9   C8   H5  
+ <MOL 171>:  C8   C13  C9   C10 
+ <MOL 171>:  C9   C11  C10  H6  
+ <MOL 171>:  C12  C10  C11  H7  
+ <MOL 171>:  C11  O4   C12  O3  
+ <MOL 171>:  C9   C14  C13  H8  
+ <MOL 171>:  C6   C13  C14  O5  
+ <MOL 171>:  C15  O6   C16  O7  
+ <MOL 172>:  C2   C18  C1   O1  
+ <MOL 172>:  C1   C17  C18  O8  
+ <MOL 172>:  C4   C18  C17  H10 
+ <MOL 172>:  C3   C1   C2   H1  
+ <MOL 172>:  C2   C4   C3   H2  
+ <MOL 172>:  C5   C3   C4   C17 
+ <MOL 172>:  C7   C14  C6   O2  
+ <MOL 172>:  C6   C8   C7   H4  
+ <MOL 172>:  C7   C9   C8   H5  
+ <MOL 172>:  C8   C13  C9   C10 
+ <MOL 172>:  C9   C11  C10  H6  
+ <MOL 172>:  C12  C10  C11  H7  
+ <MOL 172>:  C11  O4   C12  O3  
+ <MOL 172>:  C9   C14  C13  H8  
+ <MOL 172>:  C6   C13  C14  O5  
+ <MOL 172>:  C15  O6   C16  O7  
+ total 624 improper torsions applied
+ 160 improper torsions in old prep form
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CILE	1
+	NLEU	1
+	WAT	51834
+  )
+ (no restraints)
+>     savepdb complex ref_monomer.pdb
+Writing pdb file: ref_monomer.pdb
+   printing CRYST1 record to PDB file with box info
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NLEU -> LEU
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CILE -> ILE
+>     quit
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 3; Notes = 1.
+log started: Wed Jul 10 18:33:26 2024
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff14SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> parm10 = loadamberparams parm10.dat
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+>> frcmod14SB = loadamberparams frcmod.ff14SB
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+>> #
+>> #	Load main chain and terminating amino acid libraries
+>> #
+>> loadOff amino12.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/amino12.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "HYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+> 
+>     source /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.water.tip3p
+----- Source: /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.water.tip3p
+----- Source of /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.water.tip3p done
+>> #
+>> #       Load water and ions for TIP3P + Li/Merz monovalent ions 
+>> #       + Joung-Chetham monovalent ions
+>> #       + Li/Merz highly charged ions (+2 to +4, 12-6 normal usage set)
+>> #
+>> #       Note: the Li/Merz monovalent set is loaded only to get Tl+,
+>> #          Cu+, Ag+ NH4+, H3O+.  Since we load Joung-Cheatham second,
+>> #          the alkali halide parameters come from the Joung-Cheatham set
+>> #
+>> addAtomTypes {
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>>     { "Tl+"  "Tl"  "sp3" }
+>>     { "Cu+"  "Cu"  "sp3" }
+>>     { "Ag+"  "Ag"  "sp3" }
+>>     { "NH4+"  "N"  "sp3" }
+>>     { "H3O+"  "O"  "sp3" }
+>>     { "Be2+" "Be"  "sp3" }
+>>     { "Cu2+" "Cu"  "sp3" }
+>>     { "Ni2+" "Ni"  "sp3" }
+>>     { "Pt2+" "Pt"  "sp3" }
+>>     { "Zn2+" "Zn"  "sp3" }
+>>     { "Co2+" "Co"  "sp3" }
+>>     { "Pd2+" "Pd"  "sp3" }
+>>     { "Ag2+" "Ag"  "sp3" }
+>>     { "Cr2+" "Cr"  "sp3" }
+>>     { "Fe2+" "Fe"  "sp3" }
+>>     { "Mg2+" "Mg"  "sp3" }
+>>     { "V2+"  "V"   "sp3" }
+>>     { "Mn2+" "Mn"  "sp3" }
+>>     { "Hg2+" "Hg"  "sp3" }
+>>     { "Cd2+" "Cd"  "sp3" }
+>>     { "Yb2+" "Yb"  "sp3" }
+>>     { "Ca2+" "Ca"  "sp3" }
+>>     { "Sn2+" "Sn"  "sp3" }
+>>     { "Pb2+" "Pb"  "sp3" }
+>>     { "Eu2+" "Eu"  "sp3" }
+>>     { "Sr2+" "Sr"  "sp3" }
+>>     { "Sm2+" "Sm"  "sp3" }
+>>     { "Ba2+" "Ba"  "sp3" }
+>>     { "Ra2+" "Ra"  "sp3" }
+>>     { "Al3+" "Al"  "sp3" }
+>>     { "Fe3+" "Fe"  "sp3" }
+>>     { "Cr3+" "Cr"  "sp3" }
+>>     { "In3+" "In"  "sp3" }
+>>     { "Tl3+" "Tl"  "sp3" }
+>>     { "Y3+"  "Y"   "sp3" }
+>>     { "La3+" "La"  "sp3" }
+>>     { "Ce3+" "Ce"  "sp3" }
+>>     { "Pr3+" "Pr"  "sp3" }
+>>     { "Nd3+" "Nd"  "sp3" }
+>>     { "Sm3+" "Sm"  "sp3" }
+>>     { "Eu3+" "Eu"  "sp3" }
+>>     { "Gd3+" "Gd"  "sp3" }
+>>     { "Tb3+" "Tb"  "sp3" }
+>>     { "Dy3+" "Dy"  "sp3" }
+>>     { "Er3+" "Er"  "sp3" }
+>>     { "Tm3+" "Tm"  "sp3" }
+>>     { "Lu3+" "Lu"  "sp3" }
+>>     { "Hf4+" "Hf"  "sp3" }
+>>     { "Zr4+" "Zr"  "sp3" }
+>>     { "Ce4+" "Ce"  "sp3" }
+>>     { "U4+"  "U"   "sp3" }
+>>     { "Pu4+" "Pu"  "sp3" }
+>>     { "Th4+" "Th"  "sp3" }
+>> }
+>> loadOff atomic_ions.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPC3POLBOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> loadAmberParams frcmod.tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+>> loadAmberParams frcmod.ions1lm_126_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+>> loadAmberParams frcmod.ionsjc_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>> loadAmberParams frcmod.ions234lm_126_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ions234lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP3P water model (12-6 normal usage set)
+>> 
+> 
+>     source /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.gaff
+----- Source: /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.gaff
+----- Source of /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.gaff done
+>> logFile leap.log
+log started: Wed Jul 10 18:33:26 2024
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the general Amber Force field.
+>> #       This file is mostly for use with Antechamber
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "h1"  "H" "sp3" }
+>> 	{ "h2"  "H" "sp3" }
+>> 	{ "h3"  "H" "sp3" }
+>> 	{ "h4"  "H" "sp3" }
+>> 	{ "h5"  "H" "sp3" }
+>> 	{ "ha"  "H" "sp3" }
+>> 	{ "hc"  "H" "sp3" }
+>> 	{ "hn"  "H" "sp3" }
+>> 	{ "ho"  "H" "sp3" }
+>> 	{ "hp"  "H" "sp3" }
+>> 	{ "hs"  "H" "sp3" }
+>> 	{ "hw"  "H" "sp3" }
+>> 	{ "hx"  "H" "sp3" }
+>> 	{ "o"  "O" "sp2" }
+>> 	{ "o2"  "O" "sp2" }
+>> 	{ "oh"  "O" "sp3" }
+>> 	{ "op"  "O" "sp3" }
+>> 	{ "oq"  "O" "sp3" }
+>> 	{ "os"  "O" "sp3" }
+>> 	{ "ow"  "O" "sp3" }
+>> 	{ "c"  "C" "sp2" }
+>> 	{ "c1"  "C" "sp2" }
+>> 	{ "c2"  "C" "sp2" }
+>> 	{ "c3"  "C" "sp3" }
+>> 	{ "ca"  "C" "sp2" }
+>> 	{ "cc"  "C" "sp2" }
+>> 	{ "cd"  "C" "sp2" }
+>> 	{ "ce"  "C" "sp2" }
+>> 	{ "cf"  "C" "sp2" }
+>> 	{ "cg"  "C" "sp2" }
+>> 	{ "ch"  "C" "sp2" }
+>> 	{ "cp"  "C" "sp2" }
+>> 	{ "cq"  "C" "sp2" }
+>> 	{ "cu"  "C" "sp2" }
+>> 	{ "cv"  "C" "sp2" }
+>> 	{ "cx"  "C" "sp2" }
+>> 	{ "cy"  "C" "sp2" }
+>> 	{ "cz"  "C" "sp2" }
+>> 	{ "n"   "N" "sp2" }
+>> 	{ "n1"  "N" "sp2" }
+>> 	{ "n2"  "N" "sp2" }
+>> 	{ "n3"  "N" "sp3" }
+>> 	{ "n4"  "N" "sp3" }
+>> 	{ "na"  "N" "sp2" }
+>> 	{ "nb"  "N" "sp2" }
+>> 	{ "nc"  "N" "sp2" }
+>> 	{ "nd"  "N" "sp2" }
+>> 	{ "ne"  "N" "sp2" }
+>> 	{ "nf"  "N" "sp2" }
+>> 	{ "nh"  "N" "sp2" }
+>> 	{ "ni"  "N" "sp2" }
+>> 	{ "nj"  "N" "sp2" }
+>> 	{ "nk"  "N" "sp3" }
+>> 	{ "nl"  "N" "sp3" }
+>> 	{ "nm"  "N" "sp2" }
+>> 	{ "nn"  "N" "sp2" }
+>> 	{ "no"  "N" "sp2" }
+>> 	{ "np"  "N" "sp3" }
+>> 	{ "nq"  "N" "sp3" }
+>> 	{ "s"   "S" "sp2" }
+>> 	{ "s2"   "S" "sp2" }
+>> 	{ "s3"   "S" "sp3" }
+>> 	{ "s4"   "S" "sp3" }
+>> 	{ "s6"   "S" "sp3" }
+>> 	{ "sh"   "S" "sp3" }
+>> 	{ "sp"   "S" "sp3" }
+>> 	{ "sq"   "S" "sp3" }
+>> 	{ "ss"   "S" "sp3" }
+>> 	{ "sx"   "S" "sp3" }
+>> 	{ "sy"   "S" "sp3" }
+>> 	{ "p2"   "P" "sp2" }
+>> 	{ "p3"   "P" "sp3" }
+>> 	{ "p4"   "P" "sp3" }
+>> 	{ "p5"   "P" "sp3" }
+>> 	{ "pb"   "P" "sp3" }
+>> 	{ "pc"   "P" "sp3" }
+>> 	{ "pd"   "P" "sp3" }
+>> 	{ "pe"   "P" "sp3" }
+>> 	{ "pf"   "P" "sp3" }
+>> 	{ "px"   "P" "sp3" }
+>> 	{ "py"   "P" "sp3" }
+>> 	{ "f"   "F" "sp3" }
+>> 	{ "cl"  "Cl" "sp3" }
+>> 	{ "br"  "Br" "sp3" }
+>> 	{ "i"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the general force field parameter set.
+>> #
+>> gaff = loadamberparams gaff.dat
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/gaff.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 1.81, May 2017)
+> 
+>     loadamberparams /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ionsjc_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>     loadamberparams EFZ.frcmod
+Loading parameters: ./EFZ.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+>     loadamberprep EFZ_sybyl_resp_gaff.prepc
+Loading Prep file: ./EFZ_sybyl_resp_gaff.prepc
+Loaded UNIT: MOL
+>     complex  = loadpdb /home/ron/work/NEW_SIMULATIONBOXES/test2/2blg/cab/2blg.pdb_box_size_8.999999999999998_8.999999999999998_8.999999999999998/2blg.pdb_8.999999999999998_8.999999999999998_8.999999999999998_cab_ph9_10_mol_with_TER.pdb # change: name of pdb file, protonate first
+Loading PDB file: /home/ron/work/NEW_SIMULATIONBOXES/test2/2blg/cab/2blg.pdb_box_size_8.999999999999998_8.999999999999998_8.999999999999998/2blg.pdb_8.999999999999998_8.999999999999998_8.999999999999998_cab_ph9_10_mol_with_TER.pdb
+Matching PDB residue names to LEaP variables.
+Mapped residue LEU, term: Terminal/beginning, seq. number: 0 to: NLEU.
+Mapped residue ILE, term: Terminal/last, seq. number: 161 to: CILE.
+  total atoms in file: 2965
+>     bond complex.106.SG complex.119.SG # change: number of residues that correspond to CYS
+>     bond complex.66.SG complex.160.SG # change: number of residues that correspond to CYS
+>     solvateBox complex TIP3PBOX 13.35
+  Solute vdw bounding box:              96.374 91.232 88.397
+  Total bounding box for atom centers:  123.074 117.932 115.097
+  Solvent unit box:                     18.774 18.774 18.774
+The number of boxes:  x= 7  y= 7  z= 7
+  Total vdw box size:                   126.137 121.067 118.320 angstroms.
+  Volume: 1806855.483 A^3 
+  Total mass 953838.610 amu,  Density 0.877 g/cc
+  Added 51728 residues.
+>     charge complex
+Total unperturbed charge: -38.999990
+Total perturbed charge:   -38.999990
+>     addionsrand complex Na+ 1 Cl- 1 # change: ionic strength of the experiment & 0 net charge for the system
+Adding 2 counter ions to "complex". 51726 solvent molecules will remain.
+0: Placed Na+ in complex at (32.33, 51.67, 17.77).
+Placed Cl- in complex at (-2.71, 7.89, -50.94).
+>     charge complex
+Total unperturbed charge: -38.999990
+Total perturbed charge:   -38.999990
+>     saveamberparm complex ref.prmtop ref.inpcrd
+Checking Unit.
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Warning!
+The unperturbed charge of the unit (-38.999990) is not zero.
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+old PREP-specified impropers:
+ <MOL 163>:  C2   C18  C1   O1  
+ <MOL 163>:  C1   C17  C18  O8  
+ <MOL 163>:  C4   C18  C17  H10 
+ <MOL 163>:  C3   C1   C2   H1  
+ <MOL 163>:  C2   C4   C3   H2  
+ <MOL 163>:  C5   C3   C4   C17 
+ <MOL 163>:  C7   C14  C6   O2  
+ <MOL 163>:  C6   C8   C7   H4  
+ <MOL 163>:  C7   C9   C8   H5  
+ <MOL 163>:  C8   C13  C9   C10 
+ <MOL 163>:  C9   C11  C10  H6  
+ <MOL 163>:  C12  C10  C11  H7  
+ <MOL 163>:  C11  O4   C12  O3  
+ <MOL 163>:  C9   C14  C13  H8  
+ <MOL 163>:  C6   C13  C14  O5  
+ <MOL 163>:  C15  O6   C16  O7  
+ <MOL 164>:  C2   C18  C1   O1  
+ <MOL 164>:  C1   C17  C18  O8  
+ <MOL 164>:  C4   C18  C17  H10 
+ <MOL 164>:  C3   C1   C2   H1  
+ <MOL 164>:  C2   C4   C3   H2  
+ <MOL 164>:  C5   C3   C4   C17 
+ <MOL 164>:  C7   C14  C6   O2  
+ <MOL 164>:  C6   C8   C7   H4  
+ <MOL 164>:  C7   C9   C8   H5  
+ <MOL 164>:  C8   C13  C9   C10 
+ <MOL 164>:  C9   C11  C10  H6  
+ <MOL 164>:  C12  C10  C11  H7  
+ <MOL 164>:  C11  O4   C12  O3  
+ <MOL 164>:  C9   C14  C13  H8  
+ <MOL 164>:  C6   C13  C14  O5  
+ <MOL 164>:  C15  O6   C16  O7  
+ <MOL 165>:  C2   C18  C1   O1  
+ <MOL 165>:  C1   C17  C18  O8  
+ <MOL 165>:  C4   C18  C17  H10 
+ <MOL 165>:  C3   C1   C2   H1  
+ <MOL 165>:  C2   C4   C3   H2  
+ <MOL 165>:  C5   C3   C4   C17 
+ <MOL 165>:  C7   C14  C6   O2  
+ <MOL 165>:  C6   C8   C7   H4  
+ <MOL 165>:  C7   C9   C8   H5  
+ <MOL 165>:  C8   C13  C9   C10 
+ <MOL 165>:  C9   C11  C10  H6  
+ <MOL 165>:  C12  C10  C11  H7  
+ <MOL 165>:  C11  O4   C12  O3  
+ <MOL 165>:  C9   C14  C13  H8  
+ <MOL 165>:  C6   C13  C14  O5  
+ <MOL 165>:  C15  O6   C16  O7  
+ <MOL 166>:  C2   C18  C1   O1  
+ <MOL 166>:  C1   C17  C18  O8  
+ <MOL 166>:  C4   C18  C17  H10 
+ <MOL 166>:  C3   C1   C2   H1  
+ <MOL 166>:  C2   C4   C3   H2  
+ <MOL 166>:  C5   C3   C4   C17 
+ <MOL 166>:  C7   C14  C6   O2  
+ <MOL 166>:  C6   C8   C7   H4  
+ <MOL 166>:  C7   C9   C8   H5  
+ <MOL 166>:  C8   C13  C9   C10 
+ <MOL 166>:  C9   C11  C10  H6  
+ <MOL 166>:  C12  C10  C11  H7  
+ <MOL 166>:  C11  O4   C12  O3  
+ <MOL 166>:  C9   C14  C13  H8  
+ <MOL 166>:  C6   C13  C14  O5  
+ <MOL 166>:  C15  O6   C16  O7  
+ <MOL 167>:  C2   C18  C1   O1  
+ <MOL 167>:  C1   C17  C18  O8  
+ <MOL 167>:  C4   C18  C17  H10 
+ <MOL 167>:  C3   C1   C2   H1  
+ <MOL 167>:  C2   C4   C3   H2  
+ <MOL 167>:  C5   C3   C4   C17 
+ <MOL 167>:  C7   C14  C6   O2  
+ <MOL 167>:  C6   C8   C7   H4  
+ <MOL 167>:  C7   C9   C8   H5  
+ <MOL 167>:  C8   C13  C9   C10 
+ <MOL 167>:  C9   C11  C10  H6  
+ <MOL 167>:  C12  C10  C11  H7  
+ <MOL 167>:  C11  O4   C12  O3  
+ <MOL 167>:  C9   C14  C13  H8  
+ <MOL 167>:  C6   C13  C14  O5  
+ <MOL 167>:  C15  O6   C16  O7  
+ <MOL 168>:  C2   C18  C1   O1  
+ <MOL 168>:  C1   C17  C18  O8  
+ <MOL 168>:  C4   C18  C17  H10 
+ <MOL 168>:  C3   C1   C2   H1  
+ <MOL 168>:  C2   C4   C3   H2  
+ <MOL 168>:  C5   C3   C4   C17 
+ <MOL 168>:  C7   C14  C6   O2  
+ <MOL 168>:  C6   C8   C7   H4  
+ <MOL 168>:  C7   C9   C8   H5  
+ <MOL 168>:  C8   C13  C9   C10 
+ <MOL 168>:  C9   C11  C10  H6  
+ <MOL 168>:  C12  C10  C11  H7  
+ <MOL 168>:  C11  O4   C12  O3  
+ <MOL 168>:  C9   C14  C13  H8  
+ <MOL 168>:  C6   C13  C14  O5  
+ <MOL 168>:  C15  O6   C16  O7  
+ <MOL 169>:  C2   C18  C1   O1  
+ <MOL 169>:  C1   C17  C18  O8  
+ <MOL 169>:  C4   C18  C17  H10 
+ <MOL 169>:  C3   C1   C2   H1  
+ <MOL 169>:  C2   C4   C3   H2  
+ <MOL 169>:  C5   C3   C4   C17 
+ <MOL 169>:  C7   C14  C6   O2  
+ <MOL 169>:  C6   C8   C7   H4  
+ <MOL 169>:  C7   C9   C8   H5  
+ <MOL 169>:  C8   C13  C9   C10 
+ <MOL 169>:  C9   C11  C10  H6  
+ <MOL 169>:  C12  C10  C11  H7  
+ <MOL 169>:  C11  O4   C12  O3  
+ <MOL 169>:  C9   C14  C13  H8  
+ <MOL 169>:  C6   C13  C14  O5  
+ <MOL 169>:  C15  O6   C16  O7  
+ <MOL 170>:  C2   C18  C1   O1  
+ <MOL 170>:  C1   C17  C18  O8  
+ <MOL 170>:  C4   C18  C17  H10 
+ <MOL 170>:  C3   C1   C2   H1  
+ <MOL 170>:  C2   C4   C3   H2  
+ <MOL 170>:  C5   C3   C4   C17 
+ <MOL 170>:  C7   C14  C6   O2  
+ <MOL 170>:  C6   C8   C7   H4  
+ <MOL 170>:  C7   C9   C8   H5  
+ <MOL 170>:  C8   C13  C9   C10 
+ <MOL 170>:  C9   C11  C10  H6  
+ <MOL 170>:  C12  C10  C11  H7  
+ <MOL 170>:  C11  O4   C12  O3  
+ <MOL 170>:  C9   C14  C13  H8  
+ <MOL 170>:  C6   C13  C14  O5  
+ <MOL 170>:  C15  O6   C16  O7  
+ <MOL 171>:  C2   C18  C1   O1  
+ <MOL 171>:  C1   C17  C18  O8  
+ <MOL 171>:  C4   C18  C17  H10 
+ <MOL 171>:  C3   C1   C2   H1  
+ <MOL 171>:  C2   C4   C3   H2  
+ <MOL 171>:  C5   C3   C4   C17 
+ <MOL 171>:  C7   C14  C6   O2  
+ <MOL 171>:  C6   C8   C7   H4  
+ <MOL 171>:  C7   C9   C8   H5  
+ <MOL 171>:  C8   C13  C9   C10 
+ <MOL 171>:  C9   C11  C10  H6  
+ <MOL 171>:  C12  C10  C11  H7  
+ <MOL 171>:  C11  O4   C12  O3  
+ <MOL 171>:  C9   C14  C13  H8  
+ <MOL 171>:  C6   C13  C14  O5  
+ <MOL 171>:  C15  O6   C16  O7  
+ <MOL 172>:  C2   C18  C1   O1  
+ <MOL 172>:  C1   C17  C18  O8  
+ <MOL 172>:  C4   C18  C17  H10 
+ <MOL 172>:  C3   C1   C2   H1  
+ <MOL 172>:  C2   C4   C3   H2  
+ <MOL 172>:  C5   C3   C4   C17 
+ <MOL 172>:  C7   C14  C6   O2  
+ <MOL 172>:  C6   C8   C7   H4  
+ <MOL 172>:  C7   C9   C8   H5  
+ <MOL 172>:  C8   C13  C9   C10 
+ <MOL 172>:  C9   C11  C10  H6  
+ <MOL 172>:  C12  C10  C11  H7  
+ <MOL 172>:  C11  O4   C12  O3  
+ <MOL 172>:  C9   C14  C13  H8  
+ <MOL 172>:  C6   C13  C14  O5  
+ <MOL 172>:  C15  O6   C16  O7  
+ total 624 improper torsions applied
+ 160 improper torsions in old prep form
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CILE	1
+	NLEU	1
+	WAT	51726
+  )
+ (no restraints)
+>     savepdb complex ref_monomer.pdb
+Writing pdb file: ref_monomer.pdb
+   printing CRYST1 record to PDB file with box info
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NLEU -> LEU
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CILE -> ILE
+>     quit
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 3; Notes = 1.
+log started: Wed Jul 10 18:33:41 2024
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff14SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> parm10 = loadamberparams parm10.dat
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+>> frcmod14SB = loadamberparams frcmod.ff14SB
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+>> #
+>> #	Load main chain and terminating amino acid libraries
+>> #
+>> loadOff amino12.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/amino12.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "HYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+> 
+>     source /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.water.tip3p
+----- Source: /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.water.tip3p
+----- Source of /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.water.tip3p done
+>> #
+>> #       Load water and ions for TIP3P + Li/Merz monovalent ions 
+>> #       + Joung-Chetham monovalent ions
+>> #       + Li/Merz highly charged ions (+2 to +4, 12-6 normal usage set)
+>> #
+>> #       Note: the Li/Merz monovalent set is loaded only to get Tl+,
+>> #          Cu+, Ag+ NH4+, H3O+.  Since we load Joung-Cheatham second,
+>> #          the alkali halide parameters come from the Joung-Cheatham set
+>> #
+>> addAtomTypes {
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>>     { "Tl+"  "Tl"  "sp3" }
+>>     { "Cu+"  "Cu"  "sp3" }
+>>     { "Ag+"  "Ag"  "sp3" }
+>>     { "NH4+"  "N"  "sp3" }
+>>     { "H3O+"  "O"  "sp3" }
+>>     { "Be2+" "Be"  "sp3" }
+>>     { "Cu2+" "Cu"  "sp3" }
+>>     { "Ni2+" "Ni"  "sp3" }
+>>     { "Pt2+" "Pt"  "sp3" }
+>>     { "Zn2+" "Zn"  "sp3" }
+>>     { "Co2+" "Co"  "sp3" }
+>>     { "Pd2+" "Pd"  "sp3" }
+>>     { "Ag2+" "Ag"  "sp3" }
+>>     { "Cr2+" "Cr"  "sp3" }
+>>     { "Fe2+" "Fe"  "sp3" }
+>>     { "Mg2+" "Mg"  "sp3" }
+>>     { "V2+"  "V"   "sp3" }
+>>     { "Mn2+" "Mn"  "sp3" }
+>>     { "Hg2+" "Hg"  "sp3" }
+>>     { "Cd2+" "Cd"  "sp3" }
+>>     { "Yb2+" "Yb"  "sp3" }
+>>     { "Ca2+" "Ca"  "sp3" }
+>>     { "Sn2+" "Sn"  "sp3" }
+>>     { "Pb2+" "Pb"  "sp3" }
+>>     { "Eu2+" "Eu"  "sp3" }
+>>     { "Sr2+" "Sr"  "sp3" }
+>>     { "Sm2+" "Sm"  "sp3" }
+>>     { "Ba2+" "Ba"  "sp3" }
+>>     { "Ra2+" "Ra"  "sp3" }
+>>     { "Al3+" "Al"  "sp3" }
+>>     { "Fe3+" "Fe"  "sp3" }
+>>     { "Cr3+" "Cr"  "sp3" }
+>>     { "In3+" "In"  "sp3" }
+>>     { "Tl3+" "Tl"  "sp3" }
+>>     { "Y3+"  "Y"   "sp3" }
+>>     { "La3+" "La"  "sp3" }
+>>     { "Ce3+" "Ce"  "sp3" }
+>>     { "Pr3+" "Pr"  "sp3" }
+>>     { "Nd3+" "Nd"  "sp3" }
+>>     { "Sm3+" "Sm"  "sp3" }
+>>     { "Eu3+" "Eu"  "sp3" }
+>>     { "Gd3+" "Gd"  "sp3" }
+>>     { "Tb3+" "Tb"  "sp3" }
+>>     { "Dy3+" "Dy"  "sp3" }
+>>     { "Er3+" "Er"  "sp3" }
+>>     { "Tm3+" "Tm"  "sp3" }
+>>     { "Lu3+" "Lu"  "sp3" }
+>>     { "Hf4+" "Hf"  "sp3" }
+>>     { "Zr4+" "Zr"  "sp3" }
+>>     { "Ce4+" "Ce"  "sp3" }
+>>     { "U4+"  "U"   "sp3" }
+>>     { "Pu4+" "Pu"  "sp3" }
+>>     { "Th4+" "Th"  "sp3" }
+>> }
+>> loadOff atomic_ions.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPC3POLBOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> loadAmberParams frcmod.tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+>> loadAmberParams frcmod.ions1lm_126_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+>> loadAmberParams frcmod.ionsjc_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>> loadAmberParams frcmod.ions234lm_126_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ions234lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP3P water model (12-6 normal usage set)
+>> 
+> 
+>     source /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.gaff
+----- Source: /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.gaff
+----- Source of /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.gaff done
+>> logFile leap.log
+log started: Wed Jul 10 18:33:41 2024
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the general Amber Force field.
+>> #       This file is mostly for use with Antechamber
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "h1"  "H" "sp3" }
+>> 	{ "h2"  "H" "sp3" }
+>> 	{ "h3"  "H" "sp3" }
+>> 	{ "h4"  "H" "sp3" }
+>> 	{ "h5"  "H" "sp3" }
+>> 	{ "ha"  "H" "sp3" }
+>> 	{ "hc"  "H" "sp3" }
+>> 	{ "hn"  "H" "sp3" }
+>> 	{ "ho"  "H" "sp3" }
+>> 	{ "hp"  "H" "sp3" }
+>> 	{ "hs"  "H" "sp3" }
+>> 	{ "hw"  "H" "sp3" }
+>> 	{ "hx"  "H" "sp3" }
+>> 	{ "o"  "O" "sp2" }
+>> 	{ "o2"  "O" "sp2" }
+>> 	{ "oh"  "O" "sp3" }
+>> 	{ "op"  "O" "sp3" }
+>> 	{ "oq"  "O" "sp3" }
+>> 	{ "os"  "O" "sp3" }
+>> 	{ "ow"  "O" "sp3" }
+>> 	{ "c"  "C" "sp2" }
+>> 	{ "c1"  "C" "sp2" }
+>> 	{ "c2"  "C" "sp2" }
+>> 	{ "c3"  "C" "sp3" }
+>> 	{ "ca"  "C" "sp2" }
+>> 	{ "cc"  "C" "sp2" }
+>> 	{ "cd"  "C" "sp2" }
+>> 	{ "ce"  "C" "sp2" }
+>> 	{ "cf"  "C" "sp2" }
+>> 	{ "cg"  "C" "sp2" }
+>> 	{ "ch"  "C" "sp2" }
+>> 	{ "cp"  "C" "sp2" }
+>> 	{ "cq"  "C" "sp2" }
+>> 	{ "cu"  "C" "sp2" }
+>> 	{ "cv"  "C" "sp2" }
+>> 	{ "cx"  "C" "sp2" }
+>> 	{ "cy"  "C" "sp2" }
+>> 	{ "cz"  "C" "sp2" }
+>> 	{ "n"   "N" "sp2" }
+>> 	{ "n1"  "N" "sp2" }
+>> 	{ "n2"  "N" "sp2" }
+>> 	{ "n3"  "N" "sp3" }
+>> 	{ "n4"  "N" "sp3" }
+>> 	{ "na"  "N" "sp2" }
+>> 	{ "nb"  "N" "sp2" }
+>> 	{ "nc"  "N" "sp2" }
+>> 	{ "nd"  "N" "sp2" }
+>> 	{ "ne"  "N" "sp2" }
+>> 	{ "nf"  "N" "sp2" }
+>> 	{ "nh"  "N" "sp2" }
+>> 	{ "ni"  "N" "sp2" }
+>> 	{ "nj"  "N" "sp2" }
+>> 	{ "nk"  "N" "sp3" }
+>> 	{ "nl"  "N" "sp3" }
+>> 	{ "nm"  "N" "sp2" }
+>> 	{ "nn"  "N" "sp2" }
+>> 	{ "no"  "N" "sp2" }
+>> 	{ "np"  "N" "sp3" }
+>> 	{ "nq"  "N" "sp3" }
+>> 	{ "s"   "S" "sp2" }
+>> 	{ "s2"   "S" "sp2" }
+>> 	{ "s3"   "S" "sp3" }
+>> 	{ "s4"   "S" "sp3" }
+>> 	{ "s6"   "S" "sp3" }
+>> 	{ "sh"   "S" "sp3" }
+>> 	{ "sp"   "S" "sp3" }
+>> 	{ "sq"   "S" "sp3" }
+>> 	{ "ss"   "S" "sp3" }
+>> 	{ "sx"   "S" "sp3" }
+>> 	{ "sy"   "S" "sp3" }
+>> 	{ "p2"   "P" "sp2" }
+>> 	{ "p3"   "P" "sp3" }
+>> 	{ "p4"   "P" "sp3" }
+>> 	{ "p5"   "P" "sp3" }
+>> 	{ "pb"   "P" "sp3" }
+>> 	{ "pc"   "P" "sp3" }
+>> 	{ "pd"   "P" "sp3" }
+>> 	{ "pe"   "P" "sp3" }
+>> 	{ "pf"   "P" "sp3" }
+>> 	{ "px"   "P" "sp3" }
+>> 	{ "py"   "P" "sp3" }
+>> 	{ "f"   "F" "sp3" }
+>> 	{ "cl"  "Cl" "sp3" }
+>> 	{ "br"  "Br" "sp3" }
+>> 	{ "i"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the general force field parameter set.
+>> #
+>> gaff = loadamberparams gaff.dat
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/gaff.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 1.81, May 2017)
+> 
+>     loadamberparams /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ionsjc_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>     loadamberparams EFZ.frcmod
+Loading parameters: ./EFZ.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+>     loadamberprep EFZ_sybyl_resp_gaff.prepc
+Loading Prep file: ./EFZ_sybyl_resp_gaff.prepc
+Loaded UNIT: MOL
+>     complex  = loadpdb /home/ron/work/NEW_SIMULATIONBOXES/test2/2blg/cab/2blg.pdb_box_size_8.999999999999998_8.999999999999998_8.999999999999998/2blg.pdb_8.999999999999998_8.999999999999998_8.999999999999998_cab_ph9_10_mol_with_TER.pdb # change: name of pdb file, protonate first
+Loading PDB file: /home/ron/work/NEW_SIMULATIONBOXES/test2/2blg/cab/2blg.pdb_box_size_8.999999999999998_8.999999999999998_8.999999999999998/2blg.pdb_8.999999999999998_8.999999999999998_8.999999999999998_cab_ph9_10_mol_with_TER.pdb
+Matching PDB residue names to LEaP variables.
+Mapped residue LEU, term: Terminal/beginning, seq. number: 0 to: NLEU.
+Mapped residue ILE, term: Terminal/last, seq. number: 161 to: CILE.
+  total atoms in file: 2965
+>     bond complex.106.SG complex.119.SG # change: number of residues that correspond to CYS
+>     bond complex.66.SG complex.160.SG # change: number of residues that correspond to CYS
+>     solvateBox complex TIP3PBOX 13.3
+  Solute vdw bounding box:              96.374 91.232 88.397
+  Total bounding box for atom centers:  122.974 117.832 114.997
+  Solvent unit box:                     18.774 18.774 18.774
+The number of boxes:  x= 7  y= 7  z= 7
+  Total vdw box size:                   126.137 121.060 118.289 angstroms.
+  Volume: 1806291.058 A^3 
+  Total mass 950920.018 amu,  Density 0.874 g/cc
+  Added 51566 residues.
+>     charge complex
+Total unperturbed charge: -38.999990
+Total perturbed charge:   -38.999990
+>     addionsrand complex Na+ 1 Cl- 1 # change: ionic strength of the experiment & 0 net charge for the system
+Adding 2 counter ions to "complex". 51564 solvent molecules will remain.
+0: Placed Na+ in complex at (-55.30, 19.71, -56.16).
+Placed Cl- in complex at (45.91, 38.85, 12.60).
+>     charge complex
+Total unperturbed charge: -38.999990
+Total perturbed charge:   -38.999990
+>     saveamberparm complex ref.prmtop ref.inpcrd
+Checking Unit.
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Warning!
+The unperturbed charge of the unit (-38.999990) is not zero.
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+old PREP-specified impropers:
+ <MOL 163>:  C2   C18  C1   O1  
+ <MOL 163>:  C1   C17  C18  O8  
+ <MOL 163>:  C4   C18  C17  H10 
+ <MOL 163>:  C3   C1   C2   H1  
+ <MOL 163>:  C2   C4   C3   H2  
+ <MOL 163>:  C5   C3   C4   C17 
+ <MOL 163>:  C7   C14  C6   O2  
+ <MOL 163>:  C6   C8   C7   H4  
+ <MOL 163>:  C7   C9   C8   H5  
+ <MOL 163>:  C8   C13  C9   C10 
+ <MOL 163>:  C9   C11  C10  H6  
+ <MOL 163>:  C12  C10  C11  H7  
+ <MOL 163>:  C11  O4   C12  O3  
+ <MOL 163>:  C9   C14  C13  H8  
+ <MOL 163>:  C6   C13  C14  O5  
+ <MOL 163>:  C15  O6   C16  O7  
+ <MOL 164>:  C2   C18  C1   O1  
+ <MOL 164>:  C1   C17  C18  O8  
+ <MOL 164>:  C4   C18  C17  H10 
+ <MOL 164>:  C3   C1   C2   H1  
+ <MOL 164>:  C2   C4   C3   H2  
+ <MOL 164>:  C5   C3   C4   C17 
+ <MOL 164>:  C7   C14  C6   O2  
+ <MOL 164>:  C6   C8   C7   H4  
+ <MOL 164>:  C7   C9   C8   H5  
+ <MOL 164>:  C8   C13  C9   C10 
+ <MOL 164>:  C9   C11  C10  H6  
+ <MOL 164>:  C12  C10  C11  H7  
+ <MOL 164>:  C11  O4   C12  O3  
+ <MOL 164>:  C9   C14  C13  H8  
+ <MOL 164>:  C6   C13  C14  O5  
+ <MOL 164>:  C15  O6   C16  O7  
+ <MOL 165>:  C2   C18  C1   O1  
+ <MOL 165>:  C1   C17  C18  O8  
+ <MOL 165>:  C4   C18  C17  H10 
+ <MOL 165>:  C3   C1   C2   H1  
+ <MOL 165>:  C2   C4   C3   H2  
+ <MOL 165>:  C5   C3   C4   C17 
+ <MOL 165>:  C7   C14  C6   O2  
+ <MOL 165>:  C6   C8   C7   H4  
+ <MOL 165>:  C7   C9   C8   H5  
+ <MOL 165>:  C8   C13  C9   C10 
+ <MOL 165>:  C9   C11  C10  H6  
+ <MOL 165>:  C12  C10  C11  H7  
+ <MOL 165>:  C11  O4   C12  O3  
+ <MOL 165>:  C9   C14  C13  H8  
+ <MOL 165>:  C6   C13  C14  O5  
+ <MOL 165>:  C15  O6   C16  O7  
+ <MOL 166>:  C2   C18  C1   O1  
+ <MOL 166>:  C1   C17  C18  O8  
+ <MOL 166>:  C4   C18  C17  H10 
+ <MOL 166>:  C3   C1   C2   H1  
+ <MOL 166>:  C2   C4   C3   H2  
+ <MOL 166>:  C5   C3   C4   C17 
+ <MOL 166>:  C7   C14  C6   O2  
+ <MOL 166>:  C6   C8   C7   H4  
+ <MOL 166>:  C7   C9   C8   H5  
+ <MOL 166>:  C8   C13  C9   C10 
+ <MOL 166>:  C9   C11  C10  H6  
+ <MOL 166>:  C12  C10  C11  H7  
+ <MOL 166>:  C11  O4   C12  O3  
+ <MOL 166>:  C9   C14  C13  H8  
+ <MOL 166>:  C6   C13  C14  O5  
+ <MOL 166>:  C15  O6   C16  O7  
+ <MOL 167>:  C2   C18  C1   O1  
+ <MOL 167>:  C1   C17  C18  O8  
+ <MOL 167>:  C4   C18  C17  H10 
+ <MOL 167>:  C3   C1   C2   H1  
+ <MOL 167>:  C2   C4   C3   H2  
+ <MOL 167>:  C5   C3   C4   C17 
+ <MOL 167>:  C7   C14  C6   O2  
+ <MOL 167>:  C6   C8   C7   H4  
+ <MOL 167>:  C7   C9   C8   H5  
+ <MOL 167>:  C8   C13  C9   C10 
+ <MOL 167>:  C9   C11  C10  H6  
+ <MOL 167>:  C12  C10  C11  H7  
+ <MOL 167>:  C11  O4   C12  O3  
+ <MOL 167>:  C9   C14  C13  H8  
+ <MOL 167>:  C6   C13  C14  O5  
+ <MOL 167>:  C15  O6   C16  O7  
+ <MOL 168>:  C2   C18  C1   O1  
+ <MOL 168>:  C1   C17  C18  O8  
+ <MOL 168>:  C4   C18  C17  H10 
+ <MOL 168>:  C3   C1   C2   H1  
+ <MOL 168>:  C2   C4   C3   H2  
+ <MOL 168>:  C5   C3   C4   C17 
+ <MOL 168>:  C7   C14  C6   O2  
+ <MOL 168>:  C6   C8   C7   H4  
+ <MOL 168>:  C7   C9   C8   H5  
+ <MOL 168>:  C8   C13  C9   C10 
+ <MOL 168>:  C9   C11  C10  H6  
+ <MOL 168>:  C12  C10  C11  H7  
+ <MOL 168>:  C11  O4   C12  O3  
+ <MOL 168>:  C9   C14  C13  H8  
+ <MOL 168>:  C6   C13  C14  O5  
+ <MOL 168>:  C15  O6   C16  O7  
+ <MOL 169>:  C2   C18  C1   O1  
+ <MOL 169>:  C1   C17  C18  O8  
+ <MOL 169>:  C4   C18  C17  H10 
+ <MOL 169>:  C3   C1   C2   H1  
+ <MOL 169>:  C2   C4   C3   H2  
+ <MOL 169>:  C5   C3   C4   C17 
+ <MOL 169>:  C7   C14  C6   O2  
+ <MOL 169>:  C6   C8   C7   H4  
+ <MOL 169>:  C7   C9   C8   H5  
+ <MOL 169>:  C8   C13  C9   C10 
+ <MOL 169>:  C9   C11  C10  H6  
+ <MOL 169>:  C12  C10  C11  H7  
+ <MOL 169>:  C11  O4   C12  O3  
+ <MOL 169>:  C9   C14  C13  H8  
+ <MOL 169>:  C6   C13  C14  O5  
+ <MOL 169>:  C15  O6   C16  O7  
+ <MOL 170>:  C2   C18  C1   O1  
+ <MOL 170>:  C1   C17  C18  O8  
+ <MOL 170>:  C4   C18  C17  H10 
+ <MOL 170>:  C3   C1   C2   H1  
+ <MOL 170>:  C2   C4   C3   H2  
+ <MOL 170>:  C5   C3   C4   C17 
+ <MOL 170>:  C7   C14  C6   O2  
+ <MOL 170>:  C6   C8   C7   H4  
+ <MOL 170>:  C7   C9   C8   H5  
+ <MOL 170>:  C8   C13  C9   C10 
+ <MOL 170>:  C9   C11  C10  H6  
+ <MOL 170>:  C12  C10  C11  H7  
+ <MOL 170>:  C11  O4   C12  O3  
+ <MOL 170>:  C9   C14  C13  H8  
+ <MOL 170>:  C6   C13  C14  O5  
+ <MOL 170>:  C15  O6   C16  O7  
+ <MOL 171>:  C2   C18  C1   O1  
+ <MOL 171>:  C1   C17  C18  O8  
+ <MOL 171>:  C4   C18  C17  H10 
+ <MOL 171>:  C3   C1   C2   H1  
+ <MOL 171>:  C2   C4   C3   H2  
+ <MOL 171>:  C5   C3   C4   C17 
+ <MOL 171>:  C7   C14  C6   O2  
+ <MOL 171>:  C6   C8   C7   H4  
+ <MOL 171>:  C7   C9   C8   H5  
+ <MOL 171>:  C8   C13  C9   C10 
+ <MOL 171>:  C9   C11  C10  H6  
+ <MOL 171>:  C12  C10  C11  H7  
+ <MOL 171>:  C11  O4   C12  O3  
+ <MOL 171>:  C9   C14  C13  H8  
+ <MOL 171>:  C6   C13  C14  O5  
+ <MOL 171>:  C15  O6   C16  O7  
+ <MOL 172>:  C2   C18  C1   O1  
+ <MOL 172>:  C1   C17  C18  O8  
+ <MOL 172>:  C4   C18  C17  H10 
+ <MOL 172>:  C3   C1   C2   H1  
+ <MOL 172>:  C2   C4   C3   H2  
+ <MOL 172>:  C5   C3   C4   C17 
+ <MOL 172>:  C7   C14  C6   O2  
+ <MOL 172>:  C6   C8   C7   H4  
+ <MOL 172>:  C7   C9   C8   H5  
+ <MOL 172>:  C8   C13  C9   C10 
+ <MOL 172>:  C9   C11  C10  H6  
+ <MOL 172>:  C12  C10  C11  H7  
+ <MOL 172>:  C11  O4   C12  O3  
+ <MOL 172>:  C9   C14  C13  H8  
+ <MOL 172>:  C6   C13  C14  O5  
+ <MOL 172>:  C15  O6   C16  O7  
+ total 624 improper torsions applied
+ 160 improper torsions in old prep form
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CILE	1
+	NLEU	1
+	WAT	51564
+  )
+ (no restraints)
+>     savepdb complex ref_monomer.pdb
+Writing pdb file: ref_monomer.pdb
+   printing CRYST1 record to PDB file with box info
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NLEU -> LEU
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CILE -> ILE
+>     quit
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 3; Notes = 1.
+log started: Wed Jul 10 18:34:25 2024
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff14SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> parm10 = loadamberparams parm10.dat
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+>> frcmod14SB = loadamberparams frcmod.ff14SB
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+>> #
+>> #	Load main chain and terminating amino acid libraries
+>> #
+>> loadOff amino12.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/amino12.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "HYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+> 
+>     source /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.water.tip3p
+----- Source: /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.water.tip3p
+----- Source of /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.water.tip3p done
+>> #
+>> #       Load water and ions for TIP3P + Li/Merz monovalent ions 
+>> #       + Joung-Chetham monovalent ions
+>> #       + Li/Merz highly charged ions (+2 to +4, 12-6 normal usage set)
+>> #
+>> #       Note: the Li/Merz monovalent set is loaded only to get Tl+,
+>> #          Cu+, Ag+ NH4+, H3O+.  Since we load Joung-Cheatham second,
+>> #          the alkali halide parameters come from the Joung-Cheatham set
+>> #
+>> addAtomTypes {
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>>     { "Tl+"  "Tl"  "sp3" }
+>>     { "Cu+"  "Cu"  "sp3" }
+>>     { "Ag+"  "Ag"  "sp3" }
+>>     { "NH4+"  "N"  "sp3" }
+>>     { "H3O+"  "O"  "sp3" }
+>>     { "Be2+" "Be"  "sp3" }
+>>     { "Cu2+" "Cu"  "sp3" }
+>>     { "Ni2+" "Ni"  "sp3" }
+>>     { "Pt2+" "Pt"  "sp3" }
+>>     { "Zn2+" "Zn"  "sp3" }
+>>     { "Co2+" "Co"  "sp3" }
+>>     { "Pd2+" "Pd"  "sp3" }
+>>     { "Ag2+" "Ag"  "sp3" }
+>>     { "Cr2+" "Cr"  "sp3" }
+>>     { "Fe2+" "Fe"  "sp3" }
+>>     { "Mg2+" "Mg"  "sp3" }
+>>     { "V2+"  "V"   "sp3" }
+>>     { "Mn2+" "Mn"  "sp3" }
+>>     { "Hg2+" "Hg"  "sp3" }
+>>     { "Cd2+" "Cd"  "sp3" }
+>>     { "Yb2+" "Yb"  "sp3" }
+>>     { "Ca2+" "Ca"  "sp3" }
+>>     { "Sn2+" "Sn"  "sp3" }
+>>     { "Pb2+" "Pb"  "sp3" }
+>>     { "Eu2+" "Eu"  "sp3" }
+>>     { "Sr2+" "Sr"  "sp3" }
+>>     { "Sm2+" "Sm"  "sp3" }
+>>     { "Ba2+" "Ba"  "sp3" }
+>>     { "Ra2+" "Ra"  "sp3" }
+>>     { "Al3+" "Al"  "sp3" }
+>>     { "Fe3+" "Fe"  "sp3" }
+>>     { "Cr3+" "Cr"  "sp3" }
+>>     { "In3+" "In"  "sp3" }
+>>     { "Tl3+" "Tl"  "sp3" }
+>>     { "Y3+"  "Y"   "sp3" }
+>>     { "La3+" "La"  "sp3" }
+>>     { "Ce3+" "Ce"  "sp3" }
+>>     { "Pr3+" "Pr"  "sp3" }
+>>     { "Nd3+" "Nd"  "sp3" }
+>>     { "Sm3+" "Sm"  "sp3" }
+>>     { "Eu3+" "Eu"  "sp3" }
+>>     { "Gd3+" "Gd"  "sp3" }
+>>     { "Tb3+" "Tb"  "sp3" }
+>>     { "Dy3+" "Dy"  "sp3" }
+>>     { "Er3+" "Er"  "sp3" }
+>>     { "Tm3+" "Tm"  "sp3" }
+>>     { "Lu3+" "Lu"  "sp3" }
+>>     { "Hf4+" "Hf"  "sp3" }
+>>     { "Zr4+" "Zr"  "sp3" }
+>>     { "Ce4+" "Ce"  "sp3" }
+>>     { "U4+"  "U"   "sp3" }
+>>     { "Pu4+" "Pu"  "sp3" }
+>>     { "Th4+" "Th"  "sp3" }
+>> }
+>> loadOff atomic_ions.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPC3POLBOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> loadAmberParams frcmod.tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+>> loadAmberParams frcmod.ions1lm_126_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+>> loadAmberParams frcmod.ionsjc_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>> loadAmberParams frcmod.ions234lm_126_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ions234lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP3P water model (12-6 normal usage set)
+>> 
+> 
+>     source /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.gaff
+----- Source: /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.gaff
+----- Source of /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.gaff done
+>> logFile leap.log
+log started: Wed Jul 10 18:34:25 2024
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the general Amber Force field.
+>> #       This file is mostly for use with Antechamber
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "h1"  "H" "sp3" }
+>> 	{ "h2"  "H" "sp3" }
+>> 	{ "h3"  "H" "sp3" }
+>> 	{ "h4"  "H" "sp3" }
+>> 	{ "h5"  "H" "sp3" }
+>> 	{ "ha"  "H" "sp3" }
+>> 	{ "hc"  "H" "sp3" }
+>> 	{ "hn"  "H" "sp3" }
+>> 	{ "ho"  "H" "sp3" }
+>> 	{ "hp"  "H" "sp3" }
+>> 	{ "hs"  "H" "sp3" }
+>> 	{ "hw"  "H" "sp3" }
+>> 	{ "hx"  "H" "sp3" }
+>> 	{ "o"  "O" "sp2" }
+>> 	{ "o2"  "O" "sp2" }
+>> 	{ "oh"  "O" "sp3" }
+>> 	{ "op"  "O" "sp3" }
+>> 	{ "oq"  "O" "sp3" }
+>> 	{ "os"  "O" "sp3" }
+>> 	{ "ow"  "O" "sp3" }
+>> 	{ "c"  "C" "sp2" }
+>> 	{ "c1"  "C" "sp2" }
+>> 	{ "c2"  "C" "sp2" }
+>> 	{ "c3"  "C" "sp3" }
+>> 	{ "ca"  "C" "sp2" }
+>> 	{ "cc"  "C" "sp2" }
+>> 	{ "cd"  "C" "sp2" }
+>> 	{ "ce"  "C" "sp2" }
+>> 	{ "cf"  "C" "sp2" }
+>> 	{ "cg"  "C" "sp2" }
+>> 	{ "ch"  "C" "sp2" }
+>> 	{ "cp"  "C" "sp2" }
+>> 	{ "cq"  "C" "sp2" }
+>> 	{ "cu"  "C" "sp2" }
+>> 	{ "cv"  "C" "sp2" }
+>> 	{ "cx"  "C" "sp2" }
+>> 	{ "cy"  "C" "sp2" }
+>> 	{ "cz"  "C" "sp2" }
+>> 	{ "n"   "N" "sp2" }
+>> 	{ "n1"  "N" "sp2" }
+>> 	{ "n2"  "N" "sp2" }
+>> 	{ "n3"  "N" "sp3" }
+>> 	{ "n4"  "N" "sp3" }
+>> 	{ "na"  "N" "sp2" }
+>> 	{ "nb"  "N" "sp2" }
+>> 	{ "nc"  "N" "sp2" }
+>> 	{ "nd"  "N" "sp2" }
+>> 	{ "ne"  "N" "sp2" }
+>> 	{ "nf"  "N" "sp2" }
+>> 	{ "nh"  "N" "sp2" }
+>> 	{ "ni"  "N" "sp2" }
+>> 	{ "nj"  "N" "sp2" }
+>> 	{ "nk"  "N" "sp3" }
+>> 	{ "nl"  "N" "sp3" }
+>> 	{ "nm"  "N" "sp2" }
+>> 	{ "nn"  "N" "sp2" }
+>> 	{ "no"  "N" "sp2" }
+>> 	{ "np"  "N" "sp3" }
+>> 	{ "nq"  "N" "sp3" }
+>> 	{ "s"   "S" "sp2" }
+>> 	{ "s2"   "S" "sp2" }
+>> 	{ "s3"   "S" "sp3" }
+>> 	{ "s4"   "S" "sp3" }
+>> 	{ "s6"   "S" "sp3" }
+>> 	{ "sh"   "S" "sp3" }
+>> 	{ "sp"   "S" "sp3" }
+>> 	{ "sq"   "S" "sp3" }
+>> 	{ "ss"   "S" "sp3" }
+>> 	{ "sx"   "S" "sp3" }
+>> 	{ "sy"   "S" "sp3" }
+>> 	{ "p2"   "P" "sp2" }
+>> 	{ "p3"   "P" "sp3" }
+>> 	{ "p4"   "P" "sp3" }
+>> 	{ "p5"   "P" "sp3" }
+>> 	{ "pb"   "P" "sp3" }
+>> 	{ "pc"   "P" "sp3" }
+>> 	{ "pd"   "P" "sp3" }
+>> 	{ "pe"   "P" "sp3" }
+>> 	{ "pf"   "P" "sp3" }
+>> 	{ "px"   "P" "sp3" }
+>> 	{ "py"   "P" "sp3" }
+>> 	{ "f"   "F" "sp3" }
+>> 	{ "cl"  "Cl" "sp3" }
+>> 	{ "br"  "Br" "sp3" }
+>> 	{ "i"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the general force field parameter set.
+>> #
+>> gaff = loadamberparams gaff.dat
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/gaff.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 1.81, May 2017)
+> 
+>     loadamberparams /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ionsjc_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>     loadamberparams EFZ.frcmod
+Loading parameters: ./EFZ.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+>     loadamberprep EFZ_sybyl_resp_gaff.prepc
+Loading Prep file: ./EFZ_sybyl_resp_gaff.prepc
+Loaded UNIT: MOL
+>     complex  = loadpdb /home/ron/work/NEW_SIMULATIONBOXES/test2/2blg/cab/2blg.pdb_box_size_8.999999999999998_8.999999999999998_8.999999999999998/2blg.pdb_8.999999999999998_8.999999999999998_8.999999999999998_cab_ph9_10_mol_with_TER.pdb # change: name of pdb file, protonate first
+Loading PDB file: /home/ron/work/NEW_SIMULATIONBOXES/test2/2blg/cab/2blg.pdb_box_size_8.999999999999998_8.999999999999998_8.999999999999998/2blg.pdb_8.999999999999998_8.999999999999998_8.999999999999998_cab_ph9_10_mol_with_TER.pdb
+Matching PDB residue names to LEaP variables.
+Mapped residue LEU, term: Terminal/beginning, seq. number: 0 to: NLEU.
+Mapped residue ILE, term: Terminal/last, seq. number: 161 to: CILE.
+  total atoms in file: 2965
+>     bond complex.106.SG complex.119.SG # change: number of residues that correspond to CYS
+>     bond complex.66.SG complex.160.SG # change: number of residues that correspond to CYS
+>     solvateBox complex TIP3PBOX 13.2
+  Solute vdw bounding box:              96.374 91.232 88.397
+  Total bounding box for atom centers:  122.774 117.632 114.797
+  Solvent unit box:                     18.774 18.774 18.774
+The number of boxes:  x= 7  y= 7  z= 7
+  Total vdw box size:                   125.852 121.060 117.949 angstroms.
+  Volume: 1797032.450 A^3 
+  Total mass 944758.546 amu,  Density 0.873 g/cc
+  Added 51224 residues.
+>     charge complex
+Total unperturbed charge: -38.999990
+Total perturbed charge:   -38.999990
+>     addionsrand complex Na+ 1 Cl- 1 # change: ionic strength of the experiment & 0 net charge for the system
+Adding 2 counter ions to "complex". 51222 solvent molecules will remain.
+0: Placed Na+ in complex at (-38.76, -4.54, -18.55).
+Placed Cl- in complex at (55.41, -38.02, 39.52).
+>     charge complex
+Total unperturbed charge: -38.999990
+Total perturbed charge:   -38.999990
+>     saveamberparm complex ref.prmtop ref.inpcrd
+Checking Unit.
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Warning!
+The unperturbed charge of the unit (-38.999990) is not zero.
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+old PREP-specified impropers:
+ <MOL 163>:  C2   C18  C1   O1  
+ <MOL 163>:  C1   C17  C18  O8  
+ <MOL 163>:  C4   C18  C17  H10 
+ <MOL 163>:  C3   C1   C2   H1  
+ <MOL 163>:  C2   C4   C3   H2  
+ <MOL 163>:  C5   C3   C4   C17 
+ <MOL 163>:  C7   C14  C6   O2  
+ <MOL 163>:  C6   C8   C7   H4  
+ <MOL 163>:  C7   C9   C8   H5  
+ <MOL 163>:  C8   C13  C9   C10 
+ <MOL 163>:  C9   C11  C10  H6  
+ <MOL 163>:  C12  C10  C11  H7  
+ <MOL 163>:  C11  O4   C12  O3  
+ <MOL 163>:  C9   C14  C13  H8  
+ <MOL 163>:  C6   C13  C14  O5  
+ <MOL 163>:  C15  O6   C16  O7  
+ <MOL 164>:  C2   C18  C1   O1  
+ <MOL 164>:  C1   C17  C18  O8  
+ <MOL 164>:  C4   C18  C17  H10 
+ <MOL 164>:  C3   C1   C2   H1  
+ <MOL 164>:  C2   C4   C3   H2  
+ <MOL 164>:  C5   C3   C4   C17 
+ <MOL 164>:  C7   C14  C6   O2  
+ <MOL 164>:  C6   C8   C7   H4  
+ <MOL 164>:  C7   C9   C8   H5  
+ <MOL 164>:  C8   C13  C9   C10 
+ <MOL 164>:  C9   C11  C10  H6  
+ <MOL 164>:  C12  C10  C11  H7  
+ <MOL 164>:  C11  O4   C12  O3  
+ <MOL 164>:  C9   C14  C13  H8  
+ <MOL 164>:  C6   C13  C14  O5  
+ <MOL 164>:  C15  O6   C16  O7  
+ <MOL 165>:  C2   C18  C1   O1  
+ <MOL 165>:  C1   C17  C18  O8  
+ <MOL 165>:  C4   C18  C17  H10 
+ <MOL 165>:  C3   C1   C2   H1  
+ <MOL 165>:  C2   C4   C3   H2  
+ <MOL 165>:  C5   C3   C4   C17 
+ <MOL 165>:  C7   C14  C6   O2  
+ <MOL 165>:  C6   C8   C7   H4  
+ <MOL 165>:  C7   C9   C8   H5  
+ <MOL 165>:  C8   C13  C9   C10 
+ <MOL 165>:  C9   C11  C10  H6  
+ <MOL 165>:  C12  C10  C11  H7  
+ <MOL 165>:  C11  O4   C12  O3  
+ <MOL 165>:  C9   C14  C13  H8  
+ <MOL 165>:  C6   C13  C14  O5  
+ <MOL 165>:  C15  O6   C16  O7  
+ <MOL 166>:  C2   C18  C1   O1  
+ <MOL 166>:  C1   C17  C18  O8  
+ <MOL 166>:  C4   C18  C17  H10 
+ <MOL 166>:  C3   C1   C2   H1  
+ <MOL 166>:  C2   C4   C3   H2  
+ <MOL 166>:  C5   C3   C4   C17 
+ <MOL 166>:  C7   C14  C6   O2  
+ <MOL 166>:  C6   C8   C7   H4  
+ <MOL 166>:  C7   C9   C8   H5  
+ <MOL 166>:  C8   C13  C9   C10 
+ <MOL 166>:  C9   C11  C10  H6  
+ <MOL 166>:  C12  C10  C11  H7  
+ <MOL 166>:  C11  O4   C12  O3  
+ <MOL 166>:  C9   C14  C13  H8  
+ <MOL 166>:  C6   C13  C14  O5  
+ <MOL 166>:  C15  O6   C16  O7  
+ <MOL 167>:  C2   C18  C1   O1  
+ <MOL 167>:  C1   C17  C18  O8  
+ <MOL 167>:  C4   C18  C17  H10 
+ <MOL 167>:  C3   C1   C2   H1  
+ <MOL 167>:  C2   C4   C3   H2  
+ <MOL 167>:  C5   C3   C4   C17 
+ <MOL 167>:  C7   C14  C6   O2  
+ <MOL 167>:  C6   C8   C7   H4  
+ <MOL 167>:  C7   C9   C8   H5  
+ <MOL 167>:  C8   C13  C9   C10 
+ <MOL 167>:  C9   C11  C10  H6  
+ <MOL 167>:  C12  C10  C11  H7  
+ <MOL 167>:  C11  O4   C12  O3  
+ <MOL 167>:  C9   C14  C13  H8  
+ <MOL 167>:  C6   C13  C14  O5  
+ <MOL 167>:  C15  O6   C16  O7  
+ <MOL 168>:  C2   C18  C1   O1  
+ <MOL 168>:  C1   C17  C18  O8  
+ <MOL 168>:  C4   C18  C17  H10 
+ <MOL 168>:  C3   C1   C2   H1  
+ <MOL 168>:  C2   C4   C3   H2  
+ <MOL 168>:  C5   C3   C4   C17 
+ <MOL 168>:  C7   C14  C6   O2  
+ <MOL 168>:  C6   C8   C7   H4  
+ <MOL 168>:  C7   C9   C8   H5  
+ <MOL 168>:  C8   C13  C9   C10 
+ <MOL 168>:  C9   C11  C10  H6  
+ <MOL 168>:  C12  C10  C11  H7  
+ <MOL 168>:  C11  O4   C12  O3  
+ <MOL 168>:  C9   C14  C13  H8  
+ <MOL 168>:  C6   C13  C14  O5  
+ <MOL 168>:  C15  O6   C16  O7  
+ <MOL 169>:  C2   C18  C1   O1  
+ <MOL 169>:  C1   C17  C18  O8  
+ <MOL 169>:  C4   C18  C17  H10 
+ <MOL 169>:  C3   C1   C2   H1  
+ <MOL 169>:  C2   C4   C3   H2  
+ <MOL 169>:  C5   C3   C4   C17 
+ <MOL 169>:  C7   C14  C6   O2  
+ <MOL 169>:  C6   C8   C7   H4  
+ <MOL 169>:  C7   C9   C8   H5  
+ <MOL 169>:  C8   C13  C9   C10 
+ <MOL 169>:  C9   C11  C10  H6  
+ <MOL 169>:  C12  C10  C11  H7  
+ <MOL 169>:  C11  O4   C12  O3  
+ <MOL 169>:  C9   C14  C13  H8  
+ <MOL 169>:  C6   C13  C14  O5  
+ <MOL 169>:  C15  O6   C16  O7  
+ <MOL 170>:  C2   C18  C1   O1  
+ <MOL 170>:  C1   C17  C18  O8  
+ <MOL 170>:  C4   C18  C17  H10 
+ <MOL 170>:  C3   C1   C2   H1  
+ <MOL 170>:  C2   C4   C3   H2  
+ <MOL 170>:  C5   C3   C4   C17 
+ <MOL 170>:  C7   C14  C6   O2  
+ <MOL 170>:  C6   C8   C7   H4  
+ <MOL 170>:  C7   C9   C8   H5  
+ <MOL 170>:  C8   C13  C9   C10 
+ <MOL 170>:  C9   C11  C10  H6  
+ <MOL 170>:  C12  C10  C11  H7  
+ <MOL 170>:  C11  O4   C12  O3  
+ <MOL 170>:  C9   C14  C13  H8  
+ <MOL 170>:  C6   C13  C14  O5  
+ <MOL 170>:  C15  O6   C16  O7  
+ <MOL 171>:  C2   C18  C1   O1  
+ <MOL 171>:  C1   C17  C18  O8  
+ <MOL 171>:  C4   C18  C17  H10 
+ <MOL 171>:  C3   C1   C2   H1  
+ <MOL 171>:  C2   C4   C3   H2  
+ <MOL 171>:  C5   C3   C4   C17 
+ <MOL 171>:  C7   C14  C6   O2  
+ <MOL 171>:  C6   C8   C7   H4  
+ <MOL 171>:  C7   C9   C8   H5  
+ <MOL 171>:  C8   C13  C9   C10 
+ <MOL 171>:  C9   C11  C10  H6  
+ <MOL 171>:  C12  C10  C11  H7  
+ <MOL 171>:  C11  O4   C12  O3  
+ <MOL 171>:  C9   C14  C13  H8  
+ <MOL 171>:  C6   C13  C14  O5  
+ <MOL 171>:  C15  O6   C16  O7  
+ <MOL 172>:  C2   C18  C1   O1  
+ <MOL 172>:  C1   C17  C18  O8  
+ <MOL 172>:  C4   C18  C17  H10 
+ <MOL 172>:  C3   C1   C2   H1  
+ <MOL 172>:  C2   C4   C3   H2  
+ <MOL 172>:  C5   C3   C4   C17 
+ <MOL 172>:  C7   C14  C6   O2  
+ <MOL 172>:  C6   C8   C7   H4  
+ <MOL 172>:  C7   C9   C8   H5  
+ <MOL 172>:  C8   C13  C9   C10 
+ <MOL 172>:  C9   C11  C10  H6  
+ <MOL 172>:  C12  C10  C11  H7  
+ <MOL 172>:  C11  O4   C12  O3  
+ <MOL 172>:  C9   C14  C13  H8  
+ <MOL 172>:  C6   C13  C14  O5  
+ <MOL 172>:  C15  O6   C16  O7  
+ total 624 improper torsions applied
+ 160 improper torsions in old prep form
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CILE	1
+	NLEU	1
+	WAT	51222
+  )
+ (no restraints)
+>     savepdb complex ref_monomer.pdb
+Writing pdb file: ref_monomer.pdb
+   printing CRYST1 record to PDB file with box info
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NLEU -> LEU
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CILE -> ILE
+>     quit
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 3; Notes = 1.
+log started: Tue Jul 16 19:27:53 2024
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff14SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> parm10 = loadamberparams parm10.dat
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+>> frcmod14SB = loadamberparams frcmod.ff14SB
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+>> #
+>> #	Load main chain and terminating amino acid libraries
+>> #
+>> loadOff amino12.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/amino12.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "HYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+> 
+>     source /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.water.tip3p
+----- Source: /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.water.tip3p
+----- Source of /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.water.tip3p done
+>> #
+>> #       Load water and ions for TIP3P + Li/Merz monovalent ions 
+>> #       + Joung-Chetham monovalent ions
+>> #       + Li/Merz highly charged ions (+2 to +4, 12-6 normal usage set)
+>> #
+>> #       Note: the Li/Merz monovalent set is loaded only to get Tl+,
+>> #          Cu+, Ag+ NH4+, H3O+.  Since we load Joung-Cheatham second,
+>> #          the alkali halide parameters come from the Joung-Cheatham set
+>> #
+>> addAtomTypes {
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>>     { "Tl+"  "Tl"  "sp3" }
+>>     { "Cu+"  "Cu"  "sp3" }
+>>     { "Ag+"  "Ag"  "sp3" }
+>>     { "NH4+"  "N"  "sp3" }
+>>     { "H3O+"  "O"  "sp3" }
+>>     { "Be2+" "Be"  "sp3" }
+>>     { "Cu2+" "Cu"  "sp3" }
+>>     { "Ni2+" "Ni"  "sp3" }
+>>     { "Pt2+" "Pt"  "sp3" }
+>>     { "Zn2+" "Zn"  "sp3" }
+>>     { "Co2+" "Co"  "sp3" }
+>>     { "Pd2+" "Pd"  "sp3" }
+>>     { "Ag2+" "Ag"  "sp3" }
+>>     { "Cr2+" "Cr"  "sp3" }
+>>     { "Fe2+" "Fe"  "sp3" }
+>>     { "Mg2+" "Mg"  "sp3" }
+>>     { "V2+"  "V"   "sp3" }
+>>     { "Mn2+" "Mn"  "sp3" }
+>>     { "Hg2+" "Hg"  "sp3" }
+>>     { "Cd2+" "Cd"  "sp3" }
+>>     { "Yb2+" "Yb"  "sp3" }
+>>     { "Ca2+" "Ca"  "sp3" }
+>>     { "Sn2+" "Sn"  "sp3" }
+>>     { "Pb2+" "Pb"  "sp3" }
+>>     { "Eu2+" "Eu"  "sp3" }
+>>     { "Sr2+" "Sr"  "sp3" }
+>>     { "Sm2+" "Sm"  "sp3" }
+>>     { "Ba2+" "Ba"  "sp3" }
+>>     { "Ra2+" "Ra"  "sp3" }
+>>     { "Al3+" "Al"  "sp3" }
+>>     { "Fe3+" "Fe"  "sp3" }
+>>     { "Cr3+" "Cr"  "sp3" }
+>>     { "In3+" "In"  "sp3" }
+>>     { "Tl3+" "Tl"  "sp3" }
+>>     { "Y3+"  "Y"   "sp3" }
+>>     { "La3+" "La"  "sp3" }
+>>     { "Ce3+" "Ce"  "sp3" }
+>>     { "Pr3+" "Pr"  "sp3" }
+>>     { "Nd3+" "Nd"  "sp3" }
+>>     { "Sm3+" "Sm"  "sp3" }
+>>     { "Eu3+" "Eu"  "sp3" }
+>>     { "Gd3+" "Gd"  "sp3" }
+>>     { "Tb3+" "Tb"  "sp3" }
+>>     { "Dy3+" "Dy"  "sp3" }
+>>     { "Er3+" "Er"  "sp3" }
+>>     { "Tm3+" "Tm"  "sp3" }
+>>     { "Lu3+" "Lu"  "sp3" }
+>>     { "Hf4+" "Hf"  "sp3" }
+>>     { "Zr4+" "Zr"  "sp3" }
+>>     { "Ce4+" "Ce"  "sp3" }
+>>     { "U4+"  "U"   "sp3" }
+>>     { "Pu4+" "Pu"  "sp3" }
+>>     { "Th4+" "Th"  "sp3" }
+>> }
+>> loadOff atomic_ions.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/ron/miniconda3/envs/AmberTools23/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPC3POLBOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> loadAmberParams frcmod.tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+>> loadAmberParams frcmod.ions1lm_126_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+>> loadAmberParams frcmod.ionsjc_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>> loadAmberParams frcmod.ions234lm_126_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ions234lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP3P water model (12-6 normal usage set)
+>> 
+> 
+>     source /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.gaff
+----- Source: /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.gaff
+----- Source of /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.gaff done
+>> logFile leap.log
+log started: Tue Jul 16 19:27:53 2024
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the general Amber Force field.
+>> #       This file is mostly for use with Antechamber
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "h1"  "H" "sp3" }
+>> 	{ "h2"  "H" "sp3" }
+>> 	{ "h3"  "H" "sp3" }
+>> 	{ "h4"  "H" "sp3" }
+>> 	{ "h5"  "H" "sp3" }
+>> 	{ "ha"  "H" "sp3" }
+>> 	{ "hc"  "H" "sp3" }
+>> 	{ "hn"  "H" "sp3" }
+>> 	{ "ho"  "H" "sp3" }
+>> 	{ "hp"  "H" "sp3" }
+>> 	{ "hs"  "H" "sp3" }
+>> 	{ "hw"  "H" "sp3" }
+>> 	{ "hx"  "H" "sp3" }
+>> 	{ "o"  "O" "sp2" }
+>> 	{ "o2"  "O" "sp2" }
+>> 	{ "oh"  "O" "sp3" }
+>> 	{ "op"  "O" "sp3" }
+>> 	{ "oq"  "O" "sp3" }
+>> 	{ "os"  "O" "sp3" }
+>> 	{ "ow"  "O" "sp3" }
+>> 	{ "c"  "C" "sp2" }
+>> 	{ "c1"  "C" "sp2" }
+>> 	{ "c2"  "C" "sp2" }
+>> 	{ "c3"  "C" "sp3" }
+>> 	{ "ca"  "C" "sp2" }
+>> 	{ "cc"  "C" "sp2" }
+>> 	{ "cd"  "C" "sp2" }
+>> 	{ "ce"  "C" "sp2" }
+>> 	{ "cf"  "C" "sp2" }
+>> 	{ "cg"  "C" "sp2" }
+>> 	{ "ch"  "C" "sp2" }
+>> 	{ "cp"  "C" "sp2" }
+>> 	{ "cq"  "C" "sp2" }
+>> 	{ "cu"  "C" "sp2" }
+>> 	{ "cv"  "C" "sp2" }
+>> 	{ "cx"  "C" "sp2" }
+>> 	{ "cy"  "C" "sp2" }
+>> 	{ "cz"  "C" "sp2" }
+>> 	{ "n"   "N" "sp2" }
+>> 	{ "n1"  "N" "sp2" }
+>> 	{ "n2"  "N" "sp2" }
+>> 	{ "n3"  "N" "sp3" }
+>> 	{ "n4"  "N" "sp3" }
+>> 	{ "na"  "N" "sp2" }
+>> 	{ "nb"  "N" "sp2" }
+>> 	{ "nc"  "N" "sp2" }
+>> 	{ "nd"  "N" "sp2" }
+>> 	{ "ne"  "N" "sp2" }
+>> 	{ "nf"  "N" "sp2" }
+>> 	{ "nh"  "N" "sp2" }
+>> 	{ "ni"  "N" "sp2" }
+>> 	{ "nj"  "N" "sp2" }
+>> 	{ "nk"  "N" "sp3" }
+>> 	{ "nl"  "N" "sp3" }
+>> 	{ "nm"  "N" "sp2" }
+>> 	{ "nn"  "N" "sp2" }
+>> 	{ "no"  "N" "sp2" }
+>> 	{ "np"  "N" "sp3" }
+>> 	{ "nq"  "N" "sp3" }
+>> 	{ "s"   "S" "sp2" }
+>> 	{ "s2"   "S" "sp2" }
+>> 	{ "s3"   "S" "sp3" }
+>> 	{ "s4"   "S" "sp3" }
+>> 	{ "s6"   "S" "sp3" }
+>> 	{ "sh"   "S" "sp3" }
+>> 	{ "sp"   "S" "sp3" }
+>> 	{ "sq"   "S" "sp3" }
+>> 	{ "ss"   "S" "sp3" }
+>> 	{ "sx"   "S" "sp3" }
+>> 	{ "sy"   "S" "sp3" }
+>> 	{ "p2"   "P" "sp2" }
+>> 	{ "p3"   "P" "sp3" }
+>> 	{ "p4"   "P" "sp3" }
+>> 	{ "p5"   "P" "sp3" }
+>> 	{ "pb"   "P" "sp3" }
+>> 	{ "pc"   "P" "sp3" }
+>> 	{ "pd"   "P" "sp3" }
+>> 	{ "pe"   "P" "sp3" }
+>> 	{ "pf"   "P" "sp3" }
+>> 	{ "px"   "P" "sp3" }
+>> 	{ "py"   "P" "sp3" }
+>> 	{ "f"   "F" "sp3" }
+>> 	{ "cl"  "Cl" "sp3" }
+>> 	{ "br"  "Br" "sp3" }
+>> 	{ "i"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the general force field parameter set.
+>> #
+>> gaff = loadamberparams gaff.dat
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/gaff.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 1.81, May 2017)
+> 
+>     loadamberparams /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ionsjc_tip3p
+Loading parameters: /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>     loadamberparams EFZ.frcmod
+Loading parameters: ./EFZ.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+>     loadamberprep EFZ_sybyl_resp_gaff.prepc
+Loading Prep file: ./EFZ_sybyl_resp_gaff.prepc
+Loaded UNIT: MOL
+>     complex  = loadpdb /home/ron/work/NEW_SIMULATIONBOXES/test2/2blg/cab/2blg.pdb_box_size_8.999999999999998_8.999999999999998_8.999999999999998/2blg.pdb_8.999999999999998_8.999999999999998_8.999999999999998_cab_ph9_10_mol_with_TER.pdb # change: name of pdb file, protonate first
+Loading PDB file: /home/ron/work/NEW_SIMULATIONBOXES/test2/2blg/cab/2blg.pdb_box_size_8.999999999999998_8.999999999999998_8.999999999999998/2blg.pdb_8.999999999999998_8.999999999999998_8.999999999999998_cab_ph9_10_mol_with_TER.pdb
+Matching PDB residue names to LEaP variables.
+Mapped residue LEU, term: Terminal/beginning, seq. number: 0 to: NLEU.
+Mapped residue ILE, term: Terminal/last, seq. number: 161 to: CILE.
+  total atoms in file: 2965
+>     bond complex.106.SG complex.119.SG # change: number of residues that correspond to CYS
+>     bond complex.66.SG complex.160.SG # change: number of residues that correspond to CYS
+>     solvateBox complex TIP3PBOX 13.2
+  Solute vdw bounding box:              96.374 91.232 88.397
+  Total bounding box for atom centers:  122.774 117.632 114.797
+  Solvent unit box:                     18.774 18.774 18.774
+The number of boxes:  x= 7  y= 7  z= 7
+  Total vdw box size:                   125.852 121.060 117.949 angstroms.
+  Volume: 1797032.450 A^3 
+  Total mass 944758.546 amu,  Density 0.873 g/cc
+  Added 51224 residues.
+>     charge complex
+Total unperturbed charge: -38.999990
+Total perturbed charge:   -38.999990
+>     addionsrand complex Na+ 106 Cl- 67 # change: ionic strength of the experiment & 0 net charge for the system
+Adding 173 counter ions to "complex". 51051 solvent molecules will remain.
+0: Placed Na+ in complex at (-25.84, -34.87, 25.26).
+Placed Cl- in complex at (-50.29, 42.14, -45.70).
+0: Placed Na+ in complex at (57.69, 18.44, 52.02).
+Placed Cl- in complex at (59.13, 31.79, -36.32).
+0: Placed Na+ in complex at (45.19, 43.25, -42.24).
+Placed Cl- in complex at (32.71, -24.42, 9.62).
+0: Placed Na+ in complex at (-26.95, -13.94, -23.18).
+Placed Cl- in complex at (-54.52, 2.22, -45.54).
+0: Placed Na+ in complex at (-31.39, 39.32, 38.23).
+Placed Cl- in complex at (44.70, -8.28, -8.48).
+0: Placed Na+ in complex at (-30.09, -49.65, 56.37).
+Placed Cl- in complex at (49.97, -13.74, 22.77).
+0: Placed Na+ in complex at (43.37, 4.04, -22.43).
+Placed Cl- in complex at (-51.98, 27.17, 50.86).
+0: Placed Na+ in complex at (60.28, -13.67, -50.99).
+Placed Cl- in complex at (17.49, 20.62, 26.16).
+0: Placed Na+ in complex at (-43.61, -10.83, 27.68).
+Placed Cl- in complex at (-14.82, -32.44, -50.99).
+0: Placed Na+ in complex at (40.30, -38.39, 36.00).
+Placed Cl- in complex at (18.74, 16.81, 41.63).
+0: Placed Na+ in complex at (-56.25, -23.83, -9.79).
+Placed Cl- in complex at (55.21, -26.09, -14.95).
+0: Placed Na+ in complex at (-10.01, -51.77, 29.04).
+Placed Cl- in complex at (36.80, -45.50, 13.02).
+0: Placed Na+ in complex at (-30.38, -5.74, -51.39).
+Placed Cl- in complex at (40.30, 36.71, 17.23).
+0: Placed Na+ in complex at (-16.41, -25.43, 53.85).
+Placed Cl- in complex at (-35.18, 26.88, 23.88).
+0: Placed Na+ in complex at (17.14, -20.32, -48.56).
+Placed Cl- in complex at (-39.18, 54.78, -29.79).
+0: Placed Na+ in complex at (30.86, -3.79, -23.78).
+Placed Cl- in complex at (-21.53, 10.50, 46.29).
+0: Placed Na+ in complex at (-36.66, 38.49, -55.99).
+Placed Cl- in complex at (-19.48, 57.90, 42.00).
+0: Placed Na+ in complex at (31.20, 23.81, 41.55).
+Placed Cl- in complex at (-16.43, -1.21, 39.37).
+0: Placed Na+ in complex at (-16.41, 30.89, 53.85).
+Placed Cl- in complex at (-17.42, 14.71, 30.24).
+0: Placed Na+ in complex at (11.33, 29.73, 51.03).
+Placed Cl- in complex at (59.54, 3.03, -38.39).
+0: Placed Na+ in complex at (-58.46, -57.55, -26.16).
+Placed Cl- in complex at (-1.95, -48.39, 47.87).
+0: Placed Na+ in complex at (-52.40, -16.55, -16.19).
+Placed Cl- in complex at (-10.01, -32.99, -8.51).
+0: Placed Na+ in complex at (-45.00, 3.96, -1.80).
+Placed Cl- in complex at (17.14, -39.10, 26.53).
+0: Placed Na+ in complex at (-25.35, 38.77, -24.59).
+Placed Cl- in complex at (53.29, -56.13, 54.80).
+0: Placed Na+ in complex at (-56.34, 18.98, -27.62).
+Placed Cl- in complex at (-1.95, 45.49, -46.00).
+0: Placed Na+ in complex at (13.41, 51.67, 36.73).
+Placed Cl- in complex at (11.33, 22.73, -20.58).
+0: Placed Na+ in complex at (53.15, 8.17, 33.86).
+Placed Cl- in complex at (7.10, -11.61, 30.52).
+0: Placed Na+ in complex at (-6.35, 42.58, -14.78).
+Placed Cl- in complex at (6.27, -48.03, -21.00).
+0: Placed Na+ in complex at (57.14, 43.61, -26.67).
+Placed Cl- in complex at (10.50, -37.72, -39.32).
+0: Placed Na+ in complex at (59.32, -42.16, 22.64).
+Placed Cl- in complex at (10.50, 37.37, -20.55).
+0: Placed Na+ in complex at (-13.16, -53.82, -25.26).
+Placed Cl- in complex at (-12.03, 47.69, 50.54).
+0: Placed Na+ in complex at (7.10, -49.16, -7.03).
+Placed Cl- in complex at (43.82, 8.29, 54.10).
+0: Placed Na+ in complex at (-60.69, -21.62, 25.49).
+Placed Cl- in complex at (4.05, 43.45, -25.68).
+0: Placed Na+ in complex at (-29.92, 16.62, -34.58).
+Placed Cl- in complex at (-51.32, -57.36, 27.26).
+0: Placed Na+ in complex at (-6.31, 36.13, -47.57).
+Placed Cl- in complex at (-60.88, 57.51, 48.26).
+0: Placed Na+ in complex at (35.93, 12.07, -26.95).
+Placed Cl- in complex at (-3.88, 50.45, -11.98).
+0: Placed Na+ in complex at (-35.92, -0.69, 24.61).
+Placed Cl- in complex at (-29.99, -57.64, -50.55).
+0: Placed Na+ in complex at (-19.69, 18.30, 39.52).
+Placed Cl- in complex at (45.08, -49.51, 43.70).
+0: Placed Na+ in complex at (-49.58, -27.41, 31.76).
+Placed Cl- in complex at (-31.28, 8.29, 35.33).
+0: Placed Na+ in complex at (36.52, -27.17, 55.29).
+Placed Cl- in complex at (32.47, -44.84, -6.75).
+0: Placed Na+ in complex at (-15.16, 26.30, 53.49).
+Placed Cl- in complex at (-53.55, -33.49, 46.41).
+0: Placed Na+ in complex at (58.09, -22.58, -21.05).
+Placed Cl- in complex at (-5.81, -33.89, 29.22).
+0: Placed Na+ in complex at (46.98, -41.62, -33.48).
+Placed Cl- in complex at (57.87, -16.94, 6.56).
+0: Placed Na+ in complex at (-38.76, -4.54, -37.33).
+Placed Cl- in complex at (58.32, 2.51, 33.68).
+0: Placed Na+ in complex at (-15.56, 40.58, 55.48).
+Placed Cl- in complex at (-29.68, 0.62, -53.65).
+0: Placed Na+ in complex at (-60.88, 57.51, 29.48).
+Placed Cl- in complex at (-49.96, -43.21, -42.88).
+0: Placed Na+ in complex at (-29.04, 41.95, -31.01).
+Placed Cl- in complex at (59.04, -26.37, -49.40).
+0: Placed Na+ in complex at (56.31, -29.41, -54.71).
+Placed Cl- in complex at (-23.89, -13.49, 1.41).
+0: Placed Na+ in complex at (-31.31, -27.12, 7.07).
+Placed Cl- in complex at (-39.69, -20.00, -44.94).
+0: Placed Na+ in complex at (15.63, 20.82, 21.58).
+Placed Cl- in complex at (-40.43, 48.77, 52.63).
+0: Placed Na+ in complex at (50.46, -38.93, 30.17).
+Placed Cl- in complex at (11.54, 0.21, -34.78).
+0: Placed Na+ in complex at (-25.53, -27.70, -30.51).
+Placed Cl- in complex at (4.83, -2.59, -52.70).
+0: Placed Na+ in complex at (10.18, -12.33, -38.42).
+Placed Cl- in complex at (-34.33, -4.53, 26.10).
+0: Placed Na+ in complex at (48.27, 13.04, -20.68).
+Placed Cl- in complex at (58.69, 45.66, -32.44).
+0: Placed Na+ in complex at (-41.55, 23.55, -3.21).
+Placed Cl- in complex at (38.10, -29.26, -44.10).
+0: Placed Na+ in complex at (48.12, -30.67, -30.45).
+Placed Cl- in complex at (-3.46, -5.07, -44.09).
+0: Placed Na+ in complex at (-8.49, 11.67, 24.89).
+Placed Cl- in complex at (-26.98, 44.43, 25.87).
+0: Placed Na+ in complex at (60.17, -46.41, -9.46).
+Placed Cl- in complex at (15.89, 11.22, -41.24).
+0: Placed Na+ in complex at (-44.01, -30.50, 13.43).
+Placed Cl- in complex at (6.82, -28.61, -17.17).
+0: Placed Na+ in complex at (-46.75, 11.56, 18.72).
+Placed Cl- in complex at (-11.78, -50.85, -53.78).
+0: Placed Na+ in complex at (-49.58, 10.14, -43.34).
+Placed Cl- in complex at (9.71, 34.58, 50.49).
+0: Placed Na+ in complex at (44.65, 7.16, -44.58).
+Placed Cl- in complex at (-24.14, -42.20, -19.59).
+0: Placed Na+ in complex at (2.37, -44.20, -40.02).
+Placed Cl- in complex at (-33.94, 45.08, -21.61).
+0: Placed Na+ in complex at (20.14, -56.66, 33.25).
+Placed Cl- in complex at (43.82, 45.84, 16.55).
+0: Placed Na+ in complex at (-13.77, 55.29, -10.29).
+Placed Cl- in complex at (59.78, 28.51, -34.30).
+0: Placed Na+ in complex at (34.08, 22.39, 7.30).
+Placed Cl- in complex at (55.41, 18.30, 20.74).
+0: Placed Na+ in complex at (-21.45, 35.31, 19.14).
+Placed Cl- in complex at (41.01, 9.74, 40.80).
+0: Placed Na+ in complex at (-57.61, 1.84, 44.94).
+0: Placed Na+ in complex at (10.08, -35.29, -54.53).
+0: Placed Na+ in complex at (-35.92, -57.01, 43.38).
+0: Placed Na+ in complex at (-41.87, -40.58, 39.81).
+0: Placed Na+ in complex at (-53.10, 3.03, -19.62).
+0: Placed Na+ in complex at (12.20, 57.54, -43.36).
+0: Placed Na+ in complex at (56.39, 13.72, 8.98).
+0: Placed Na+ in complex at (18.07, -35.97, -14.32).
+0: Placed Na+ in complex at (4.21, 26.56, -30.08).
+0: Placed Na+ in complex at (24.78, 50.23, -10.22).
+0: Placed Na+ in complex at (52.44, 50.45, -49.53).
+0: Placed Na+ in complex at (-38.45, 13.07, 35.25).
+0: Placed Na+ in complex at (-41.41, 18.64, -48.00).
+0: Placed Na+ in complex at (52.85, 3.62, -49.03).
+0: Placed Na+ in complex at (45.84, 46.15, -4.03).
+0: Placed Na+ in complex at (-30.09, -49.65, 18.82).
+0: Placed Na+ in complex at (-28.78, 23.33, -27.28).
+0: Placed Na+ in complex at (34.80, 44.80, -55.54).
+0: Placed Na+ in complex at (-56.00, -15.16, 56.67).
+0: Placed Na+ in complex at (7.17, -43.29, 42.48).
+0: Placed Na+ in complex at (-25.35, 20.00, -5.81).
+0: Placed Na+ in complex at (-41.41, 18.64, 8.32).
+0: Placed Na+ in complex at (25.87, 7.16, -7.03).
+0: Placed Na+ in complex at (-34.74, -43.31, 1.23).
+0: Placed Na+ in complex at (-59.17, -31.12, 8.08).
+0: Placed Na+ in complex at (-48.15, 55.85, -3.86).
+0: Placed Na+ in complex at (-42.91, -4.65, -38.37).
+0: Placed Na+ in complex at (-50.32, -6.10, 27.33).
+0: Placed Na+ in complex at (-22.64, 18.64, 8.32).
+0: Placed Na+ in complex at (-29.92, 48.54, -20.53).
+0: Placed Na+ in complex at (23.14, 11.94, -14.14).
+0: Placed Na+ in complex at (-28.29, -6.52, -27.62).
+0: Placed Na+ in complex at (-27.05, 37.37, 35.77).
+0: Placed Na+ in complex at (10.05, -1.19, 19.66).
+0: Placed Na+ in complex at (33.68, 37.41, -10.46).
+0: Placed Na+ in complex at (21.14, -6.65, -21.25).
+0: Placed Na+ in complex at (21.14, -10.67, -13.67).
+0: Placed Na+ in complex at (23.31, 57.95, 44.03).
+0: Placed Na+ in complex at (-16.41, 49.67, -40.02).
+>     charge complex
+Total unperturbed charge:   0.000010
+Total perturbed charge:     0.000010
+>     saveamberparm complex ref.prmtop ref.inpcrd
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+old PREP-specified impropers:
+ <MOL 163>:  C2   C18  C1   O1  
+ <MOL 163>:  C1   C17  C18  O8  
+ <MOL 163>:  C4   C18  C17  H10 
+ <MOL 163>:  C3   C1   C2   H1  
+ <MOL 163>:  C2   C4   C3   H2  
+ <MOL 163>:  C5   C3   C4   C17 
+ <MOL 163>:  C7   C14  C6   O2  
+ <MOL 163>:  C6   C8   C7   H4  
+ <MOL 163>:  C7   C9   C8   H5  
+ <MOL 163>:  C8   C13  C9   C10 
+ <MOL 163>:  C9   C11  C10  H6  
+ <MOL 163>:  C12  C10  C11  H7  
+ <MOL 163>:  C11  O4   C12  O3  
+ <MOL 163>:  C9   C14  C13  H8  
+ <MOL 163>:  C6   C13  C14  O5  
+ <MOL 163>:  C15  O6   C16  O7  
+ <MOL 164>:  C2   C18  C1   O1  
+ <MOL 164>:  C1   C17  C18  O8  
+ <MOL 164>:  C4   C18  C17  H10 
+ <MOL 164>:  C3   C1   C2   H1  
+ <MOL 164>:  C2   C4   C3   H2  
+ <MOL 164>:  C5   C3   C4   C17 
+ <MOL 164>:  C7   C14  C6   O2  
+ <MOL 164>:  C6   C8   C7   H4  
+ <MOL 164>:  C7   C9   C8   H5  
+ <MOL 164>:  C8   C13  C9   C10 
+ <MOL 164>:  C9   C11  C10  H6  
+ <MOL 164>:  C12  C10  C11  H7  
+ <MOL 164>:  C11  O4   C12  O3  
+ <MOL 164>:  C9   C14  C13  H8  
+ <MOL 164>:  C6   C13  C14  O5  
+ <MOL 164>:  C15  O6   C16  O7  
+ <MOL 165>:  C2   C18  C1   O1  
+ <MOL 165>:  C1   C17  C18  O8  
+ <MOL 165>:  C4   C18  C17  H10 
+ <MOL 165>:  C3   C1   C2   H1  
+ <MOL 165>:  C2   C4   C3   H2  
+ <MOL 165>:  C5   C3   C4   C17 
+ <MOL 165>:  C7   C14  C6   O2  
+ <MOL 165>:  C6   C8   C7   H4  
+ <MOL 165>:  C7   C9   C8   H5  
+ <MOL 165>:  C8   C13  C9   C10 
+ <MOL 165>:  C9   C11  C10  H6  
+ <MOL 165>:  C12  C10  C11  H7  
+ <MOL 165>:  C11  O4   C12  O3  
+ <MOL 165>:  C9   C14  C13  H8  
+ <MOL 165>:  C6   C13  C14  O5  
+ <MOL 165>:  C15  O6   C16  O7  
+ <MOL 166>:  C2   C18  C1   O1  
+ <MOL 166>:  C1   C17  C18  O8  
+ <MOL 166>:  C4   C18  C17  H10 
+ <MOL 166>:  C3   C1   C2   H1  
+ <MOL 166>:  C2   C4   C3   H2  
+ <MOL 166>:  C5   C3   C4   C17 
+ <MOL 166>:  C7   C14  C6   O2  
+ <MOL 166>:  C6   C8   C7   H4  
+ <MOL 166>:  C7   C9   C8   H5  
+ <MOL 166>:  C8   C13  C9   C10 
+ <MOL 166>:  C9   C11  C10  H6  
+ <MOL 166>:  C12  C10  C11  H7  
+ <MOL 166>:  C11  O4   C12  O3  
+ <MOL 166>:  C9   C14  C13  H8  
+ <MOL 166>:  C6   C13  C14  O5  
+ <MOL 166>:  C15  O6   C16  O7  
+ <MOL 167>:  C2   C18  C1   O1  
+ <MOL 167>:  C1   C17  C18  O8  
+ <MOL 167>:  C4   C18  C17  H10 
+ <MOL 167>:  C3   C1   C2   H1  
+ <MOL 167>:  C2   C4   C3   H2  
+ <MOL 167>:  C5   C3   C4   C17 
+ <MOL 167>:  C7   C14  C6   O2  
+ <MOL 167>:  C6   C8   C7   H4  
+ <MOL 167>:  C7   C9   C8   H5  
+ <MOL 167>:  C8   C13  C9   C10 
+ <MOL 167>:  C9   C11  C10  H6  
+ <MOL 167>:  C12  C10  C11  H7  
+ <MOL 167>:  C11  O4   C12  O3  
+ <MOL 167>:  C9   C14  C13  H8  
+ <MOL 167>:  C6   C13  C14  O5  
+ <MOL 167>:  C15  O6   C16  O7  
+ <MOL 168>:  C2   C18  C1   O1  
+ <MOL 168>:  C1   C17  C18  O8  
+ <MOL 168>:  C4   C18  C17  H10 
+ <MOL 168>:  C3   C1   C2   H1  
+ <MOL 168>:  C2   C4   C3   H2  
+ <MOL 168>:  C5   C3   C4   C17 
+ <MOL 168>:  C7   C14  C6   O2  
+ <MOL 168>:  C6   C8   C7   H4  
+ <MOL 168>:  C7   C9   C8   H5  
+ <MOL 168>:  C8   C13  C9   C10 
+ <MOL 168>:  C9   C11  C10  H6  
+ <MOL 168>:  C12  C10  C11  H7  
+ <MOL 168>:  C11  O4   C12  O3  
+ <MOL 168>:  C9   C14  C13  H8  
+ <MOL 168>:  C6   C13  C14  O5  
+ <MOL 168>:  C15  O6   C16  O7  
+ <MOL 169>:  C2   C18  C1   O1  
+ <MOL 169>:  C1   C17  C18  O8  
+ <MOL 169>:  C4   C18  C17  H10 
+ <MOL 169>:  C3   C1   C2   H1  
+ <MOL 169>:  C2   C4   C3   H2  
+ <MOL 169>:  C5   C3   C4   C17 
+ <MOL 169>:  C7   C14  C6   O2  
+ <MOL 169>:  C6   C8   C7   H4  
+ <MOL 169>:  C7   C9   C8   H5  
+ <MOL 169>:  C8   C13  C9   C10 
+ <MOL 169>:  C9   C11  C10  H6  
+ <MOL 169>:  C12  C10  C11  H7  
+ <MOL 169>:  C11  O4   C12  O3  
+ <MOL 169>:  C9   C14  C13  H8  
+ <MOL 169>:  C6   C13  C14  O5  
+ <MOL 169>:  C15  O6   C16  O7  
+ <MOL 170>:  C2   C18  C1   O1  
+ <MOL 170>:  C1   C17  C18  O8  
+ <MOL 170>:  C4   C18  C17  H10 
+ <MOL 170>:  C3   C1   C2   H1  
+ <MOL 170>:  C2   C4   C3   H2  
+ <MOL 170>:  C5   C3   C4   C17 
+ <MOL 170>:  C7   C14  C6   O2  
+ <MOL 170>:  C6   C8   C7   H4  
+ <MOL 170>:  C7   C9   C8   H5  
+ <MOL 170>:  C8   C13  C9   C10 
+ <MOL 170>:  C9   C11  C10  H6  
+ <MOL 170>:  C12  C10  C11  H7  
+ <MOL 170>:  C11  O4   C12  O3  
+ <MOL 170>:  C9   C14  C13  H8  
+ <MOL 170>:  C6   C13  C14  O5  
+ <MOL 170>:  C15  O6   C16  O7  
+ <MOL 171>:  C2   C18  C1   O1  
+ <MOL 171>:  C1   C17  C18  O8  
+ <MOL 171>:  C4   C18  C17  H10 
+ <MOL 171>:  C3   C1   C2   H1  
+ <MOL 171>:  C2   C4   C3   H2  
+ <MOL 171>:  C5   C3   C4   C17 
+ <MOL 171>:  C7   C14  C6   O2  
+ <MOL 171>:  C6   C8   C7   H4  
+ <MOL 171>:  C7   C9   C8   H5  
+ <MOL 171>:  C8   C13  C9   C10 
+ <MOL 171>:  C9   C11  C10  H6  
+ <MOL 171>:  C12  C10  C11  H7  
+ <MOL 171>:  C11  O4   C12  O3  
+ <MOL 171>:  C9   C14  C13  H8  
+ <MOL 171>:  C6   C13  C14  O5  
+ <MOL 171>:  C15  O6   C16  O7  
+ <MOL 172>:  C2   C18  C1   O1  
+ <MOL 172>:  C1   C17  C18  O8  
+ <MOL 172>:  C4   C18  C17  H10 
+ <MOL 172>:  C3   C1   C2   H1  
+ <MOL 172>:  C2   C4   C3   H2  
+ <MOL 172>:  C5   C3   C4   C17 
+ <MOL 172>:  C7   C14  C6   O2  
+ <MOL 172>:  C6   C8   C7   H4  
+ <MOL 172>:  C7   C9   C8   H5  
+ <MOL 172>:  C8   C13  C9   C10 
+ <MOL 172>:  C9   C11  C10  H6  
+ <MOL 172>:  C12  C10  C11  H7  
+ <MOL 172>:  C11  O4   C12  O3  
+ <MOL 172>:  C9   C14  C13  H8  
+ <MOL 172>:  C6   C13  C14  O5  
+ <MOL 172>:  C15  O6   C16  O7  
+ total 624 improper torsions applied
+ 160 improper torsions in old prep form
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CILE	1
+	NLEU	1
+	WAT	51051
+  )
+ (no restraints)
+>     savepdb complex ref_monomer.pdb
+Writing pdb file: ref_monomer.pdb
+   printing CRYST1 record to PDB file with box info
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NLEU -> LEU
+
+/home/ron/miniconda3/envs/AmberTools23/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CILE -> ILE
+>     quit
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 2; Notes = 0.

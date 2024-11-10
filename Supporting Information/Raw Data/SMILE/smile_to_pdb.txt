@@ -1,0 +1,2 @@
+Befehl:
+obabel --gen3d -ismi smi.txt -opdb lala > lig1.pdb

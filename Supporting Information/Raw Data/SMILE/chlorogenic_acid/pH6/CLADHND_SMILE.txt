@@ -1,0 +1,1 @@
+OC1=CC=C(C2C(C(C(O[C@@H]3C[C@](O)(C([O-])=O)C[C@@H](O)[C@H]3O)=O)=CC4=CC(O)=C(O)C=C42)C(O[C@@H]5C[C@](O)(C([O-])=O)C[C@@H](O)[C@H]5O)=O)C=C1O

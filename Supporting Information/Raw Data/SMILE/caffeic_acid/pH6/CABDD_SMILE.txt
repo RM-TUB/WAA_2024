@@ -1,0 +1,1 @@
+OC1=CC=C(C2OC(C=CC(/C=C/C([O-])=O)=C3)=C3OC2C([O-])=O)C=C1O

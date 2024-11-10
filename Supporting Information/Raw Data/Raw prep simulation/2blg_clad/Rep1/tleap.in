@@ -1,0 +1,18 @@
+
+    source /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.protein.ff14SB
+    source /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.water.tip3p
+    source /home/ron/miniconda3/envs/AmberTools23/dat/leap/cmd/leaprc.gaff
+    loadamberparams /home/ron/miniconda3/envs/AmberTools23/dat/leap/parm/frcmod.ionsjc_tip3p
+    loadamberparams EFZ.frcmod
+    loadamberprep EFZ_sybyl_resp_gaff.prepc
+    complex  = loadpdb /home/ron/work/NEW_SIMULATIONBOXES/test2/2blg/clad/2blg.pdb_box_size_9.099999999999998_9.099999999999998_9.099999999999998/2blg.pdb_9.099999999999998_9.099999999999998_9.099999999999998_clad_ph9_10_mol_with_TER.pdb # change: name of pdb file, protonate first
+    bond complex.106.SG complex.119.SG # change: number of residues that correspond to CYS
+    bond complex.66.SG complex.160.SG # change: number of residues that correspond to CYS
+    solvateBox complex TIP3PBOX 14
+    charge complex
+    addionsrand complex Na+ 111 Cl- 62 # change: ionic strength of the experiment & 0 net charge for the system
+    charge complex
+    saveamberparm complex ref.prmtop ref.inpcrd
+    savepdb complex ref_monomer.pdb
+    quit
+    
