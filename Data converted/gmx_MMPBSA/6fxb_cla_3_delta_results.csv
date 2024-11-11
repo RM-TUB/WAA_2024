@@ -1,0 +1,14 @@
+# Dateiname: ./6fxb_cla_3_FINAL_RESULTS_MMPBSA.dat
+# Erstellungsdatum: 2024-10-11 10:28:05.331914
+# Beschreibung: Energiekomponenten und statistische Parameter
+Energy Component,Average,SD(Prop.),SD,SEM(Prop.),SEM
+ΔBOND,-0.00,2.83,0.00,0.05,0.00
+ΔANGLE,-0.00,3.41,0.00,0.06,0.00
+ΔDIHED,0.00,2.20,0.00,0.04,0.00
+ΔVDWAALS,-13.88,0.97,3.03,0.02,0.06
+ΔEEL,53.62,7.52,19.59,0.14,0.36
+ΔEGB,-42.15,1.01,19.57,0.02,0.36
+ΔESURF,-2.50,0.03,0.52,0.00,0.01
+ΔGGAS,39.74,7.58,20.19,0.14,0.37
+ΔGSOLV,-44.66,1.01,19.35,0.02,0.35
+ΔTOTAL,-4.91,7.65,4.07,0.14,0.07

@@ -1,0 +1,14 @@
+# Dateiname: ./6fxb_cab_2_FINAL_RESULTS_MMPBSA.dat
+# Erstellungsdatum: 2024-10-11 10:28:05.332702
+# Beschreibung: Energiekomponenten und statistische Parameter
+Energy Component,Average,SD(Prop.),SD,SEM(Prop.),SEM
+ΔBOND,-0.00,2.42,0.00,0.04,0.00
+ΔANGLE,0.00,3.13,0.00,0.06,0.00
+ΔDIHED,-0.00,2.15,0.00,0.04,0.00
+ΔVDWAALS,-18.49,0.02,4.39,0.00,0.08
+ΔEEL,95.66,4.78,28.71,0.09,0.52
+ΔEGB,-91.89,2.39,27.69,0.04,0.51
+ΔESURF,-3.43,0.01,0.82,0.00,0.01
+ΔGGAS,77.17,4.78,30.42,0.09,0.56
+ΔGSOLV,-95.32,2.39,27.34,0.04,0.50
+ΔTOTAL,-18.15,5.34,8.12,0.10,0.15

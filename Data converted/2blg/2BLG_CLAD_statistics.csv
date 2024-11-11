@@ -1,0 +1,30 @@
+Statistik inklusive 0 (keine Kontakte) für mindestens 10.0 ns mit einem Abstand von mindestens 0.55 nm:
+Summe: 5
+Mittelwert: 0.16666666666666666
+Median: 0.0
+Standardabweichung: 0.45338235029118146
+Error in Kruskal-Wallis-Test: Need at least two groups in stats.kruskal()
+Error in Levene-Test: Must enter at least two input sample vectors.
+Error in Anova-Test: At least two samples are required; got 1.
+
+Statistik exklusive 0 (nur Kontakte) für mindestens 10.0ns mit einem Abstand von mindestens 0.55 nm:
+Summe: 5
+Mittelwert: 1.25
+Median: 1.0
+Standardabweichung: 0.4330127018922193
+Error in Kruskal-Wallis-Test: Need at least two groups in stats.kruskal()
+Error in Levene-Test: Must enter at least two input sample vectors.
+Error in Anova-Test: At least two samples are required; got 1.
+
+# Kontakt-Daten
+Ligand,Replikat1,Replikat2,Replikat3
+CLAD_mol1,0,0,1
+CLAD_mol2,1,0,0
+CLAD_mol3,0,0,0
+CLAD_mol4,0,0,0
+CLAD_mol5,0,0,0
+CLAD_mol6,0,0,0
+CLAD_mol7,0,1,0
+CLAD_mol8,0,0,0
+CLAD_mol9,0,0,0
+CLAD_mol10,0,0,2

@@ -1,0 +1,14 @@
+# Dateiname: ./2blg_clab_1_FINAL_RESULTS_MMPBSA.dat
+# Erstellungsdatum: 2024-10-11 10:28:05.328459
+# Beschreibung: Energiekomponenten und statistische Parameter
+Energy Component,Average,SD(Prop.),SD,SEM(Prop.),SEM
+ΔBOND,0.00,3.60,0.00,0.07,0.00
+ΔANGLE,0.00,4.73,0.00,0.09,0.00
+ΔDIHED,0.00,2.39,0.00,0.04,0.00
+ΔVDWAALS,-12.57,1.79,4.62,0.03,0.08
+ΔEEL,245.80,45.95,117.24,0.84,2.14
+ΔEGB,-223.30,43.36,107.41,0.79,1.96
+ΔESURF,-2.22,0.10,0.73,0.00,0.01
+ΔGGAS,233.23,45.98,118.89,0.84,2.17
+ΔGSOLV,-225.52,43.36,107.07,0.79,1.95
+ΔTOTAL,7.71,63.20,12.80,1.15,0.23
